@@ -232,24 +232,44 @@ nav a:hover::after{width:100%}
 /* ── LOGO FLOTANTE EN HERO ── */
 .hero-logo-float {
   position: absolute;
-  top: 22%;
+  top: 18%;
   right: 8%;
-  z-index: 5;
-  animation: floatLogo 6s ease-in-out infinite;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+  z-index: 10;
+  animation: floatLogo 8s ease-in-out infinite;
+  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.4));
   pointer-events: none;
 }
 
+.hero-logo-float img {
+  width: 320px;
+  height: auto;
+}
+
 @keyframes floatLogo {
-  0%, 100% { transform: translateY(0px) rotate(-3deg); }
-  50% { transform: translateY(-25px) rotate(3deg); }
+  0%, 100% { transform: translateY(0px) rotate(-5deg); }
+  50% { transform: translateY(-35px) rotate(5deg); }
+}
+
+/* Ajustes según tamaño de pantalla */
+@media(max-width: 1200px) {
+  .hero-logo-float {
+    right: 6%;
+    top: 20%;
+  }
+  .hero-logo-float img {
+    width: 280px;
+  }
+}
+
+@media(max-width: 900px) {
+  .hero-logo-float {
+    display: none; /* Se oculta en móvil para no tapar texto */
+  }
 }
 
 @media(max-width:900px) {
   .hero-logo-float {
-    width: 130px;
-    top: 18%;
-    right: 5%;
+    display: none; /* Oculto en móvil para no molestar */
   }
 }
 </style>
@@ -271,7 +291,7 @@ nav a:hover::after{width:100%}
            style="width:100%; height:100%; object-fit:contain;">
     </div>
     <div class="logo-text-wrap">
-      <span class="logo-name">Nombre de tu Agencia</span>
+      <span class="logo-name">Planti i Presi · Cingle</span>
       <span class="logo-sub">Agència de Viatges</span>
     </div>
   </a>
@@ -289,13 +309,8 @@ nav a:hover::after{width:100%}
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-content">
-    <!-- LOGO FLOTANTE EN HERO -->
-    <div class="hero-logo-float">
-      <img src="https://cdn.corenexis.com/files/c/3846569720.png" 
-           alt="Planti i Presi" 
-           style="width:180px; height:auto;">
-    </div>
-    <div class="hero-kicker">✦ Destí especial — Temporada 2025</div>
+    <!-- LOGO GRANDE EN HERO (Zona derecha) -->
+       <div class="hero-kicker">✦ Destí especial — Temporada 2025</div>
     <h1>El cor medieval<br>de <em>Bèlgica</em></h1>
     <p class="hero-desc">Brussel·les, Bruges, Gant, Anvers i més. Xocolata artesanal, cerveses úniques i arquitectura gòtica a cada cantonada.</p>
     <div class="hero-actions">
@@ -482,7 +497,7 @@ nav a:hover::after{width:100%}
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Planti & Presi Agència de Viatges · Tots els preus són orientatius i poden variar</p>
+    <p>© 2025 Planti & Presi Agència de Viatges · Tots els preus són orientatius i poden variar, aquesta no es una agència real es només per un treball escolar. No es fan compres ni trámits en aquesta página web.</p>
     <p>Fet amb ♥ a Barcelona</p>
   </div>
 </footer>
