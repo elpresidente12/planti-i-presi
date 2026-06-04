@@ -228,6 +228,30 @@ nav a:hover::after{width:100%}
   .why-grid{grid-template-columns:repeat(2,1fr)}
   nav{display:none}
 }
+
+/* ── LOGO FLOTANTE EN HERO ── */
+.hero-logo-float {
+  position: absolute;
+  top: 22%;
+  right: 8%;
+  z-index: 5;
+  animation: floatLogo 6s ease-in-out infinite;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+  pointer-events: none;
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50% { transform: translateY(-25px) rotate(3deg); }
+}
+
+@media(max-width:900px) {
+  .hero-logo-float {
+    width: 130px;
+    top: 18%;
+    right: 5%;
+  }
+}
 </style>
 </head>
 <body>
@@ -243,7 +267,7 @@ nav a:hover::after{width:100%}
   <a class="logo-wrap" href="#">
     <div class="logo-emblem">
       <img src="https://cdn.corenexis.com/files/c/3846569720.png" 
-           alt="Tu Agencia de Viajes" 
+           alt="Planti i Presi" 
            style="width:100%; height:100%; object-fit:contain;">
     </div>
     <div class="logo-text-wrap">
@@ -265,6 +289,12 @@ nav a:hover::after{width:100%}
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-content">
+    <!-- LOGO FLOTANTE EN HERO -->
+    <div class="hero-logo-float">
+      <img src="https://cdn.corenexis.com/files/c/3846569720.png" 
+           alt="Planti i Presi" 
+           style="width:180px; height:auto;">
+    </div>
     <div class="hero-kicker">✦ Destí especial — Temporada 2025</div>
     <h1>El cor medieval<br>de <em>Bèlgica</em></h1>
     <p class="hero-desc">Brussel·les, Bruges, Gant, Anvers i més. Xocolata artesanal, cerveses úniques i arquitectura gòtica a cada cantonada.</p>
