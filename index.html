@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bèlgica — Planti & Presi Agència de Viatges</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Bèlgica — Planti i Presi · Cingle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -14,115 +14,118 @@
   --g1:#1B3A0D;--g1l:#E8F5DC;--g1b:#C5E3A0;
   --b2:#0C2744;--b2l:#D8E9F8;--b2b:#89BCE0;
   --o3:#6B2D0A;--o3l:#FAF0E6;--o3b:#E8A87C;
-  --r:14px;--rs:8px;--rl:20px;
+  --r:14px;--rs:8px;
 }
 html{scroll-behavior:smooth;cursor:none}
 body{font-family:'Outfit',sans-serif;background:var(--cream);color:#1A1A1A;font-size:16px;line-height:1.65;overflow-x:hidden;cursor:none}
 a,button{cursor:none}
 
 /* ── CURSOR ── */
-#cursor-dot{position:fixed;top:0;left:0;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s,width 0.3s,height 0.3s,background 0.3s;mix-blend-mode:normal}
-#cursor-ring{position:fixed;top:0;left:0;width:44px;height:44px;border:1.5px solid rgba(201,168,76,0.6);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform 0.18s cubic-bezier(.23,1,.32,1),width 0.3s,height 0.3s,border-color 0.3s}
-#cursor-glow{position:fixed;top:0;left:0;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none;z-index:99997;transform:translate(-50%,-50%);transition:transform 0.4s cubic-bezier(.23,1,.32,1)}
+#cursor-dot{position:fixed;top:0;left:0;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s}
+#cursor-ring{position:fixed;top:0;left:0;width:44px;height:44px;border:1.5px solid rgba(201,168,76,0.6);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+#cursor-glow{position:fixed;top:0;left:0;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none;z-index:99996}
 body.hovering #cursor-dot{width:18px;height:18px;background:var(--gold-l)}
-body.hovering #cursor-ring{width:60px;height:60px;border-color:var(--gold)}
-
-/* ── GRAVITY PARTICLES ── */
-#particles-canvas{position:fixed;inset:0;pointer-events:none;z-index:99996}
+body.hovering #cursor-ring{width:62px;height:62px;border-color:var(--gold)}
+#particles-canvas{position:fixed;inset:0;pointer-events:none;z-index:99995}
 
 /* ── HEADER ── */
-.site-header{background:rgba(10,22,40,0.96);backdrop-filter:blur(16px);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:72px;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(201,168,76,0.2)}
-.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-emblem{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--gold-d),var(--gold),var(--gold-l));display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.15);position:relative;overflow:hidden;flex-shrink:0}
-.logo-emblem::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,0.15));border-radius:inherit}
-.logo-emblem svg{width:26px;height:26px;position:relative;z-index:1}
-.logo-text-wrap{display:flex;flex-direction:column;line-height:1.1}
-.logo-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:0.02em}
+.site-header{background:rgba(10,22,40,0.97);backdrop-filter:blur(20px);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:74px;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(201,168,76,0.18)}
+.logo-wrap{display:flex;align-items:center;gap:13px;text-decoration:none}
+.logo-emblem{width:48px;height:48px;border-radius:10px;overflow:hidden;border:1.5px solid rgba(201,168,76,0.5);flex-shrink:0;background:var(--gold-d);display:flex;align-items:center;justify-content:center}
+.logo-emblem img{width:100%;height:100%;object-fit:contain}
+.logo-text-wrap{display:flex;flex-direction:column;line-height:1.15}
+.logo-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:#fff;letter-spacing:.02em}
 .logo-name span{color:var(--gold)}
-.logo-sub{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:400}
-nav{display:flex;gap:28px}
-nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13.5px;font-weight:500;letter-spacing:0.04em;transition:color 0.2s;position:relative}
-nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.logo-sub{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+nav{display:flex;gap:26px}
+nav a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.04em;transition:color .2s;position:relative}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
 nav a:hover{color:var(--gold)}
 nav a:hover::after{width:100%}
-.reserve-btn{background:var(--gold);color:var(--navy);border:none;padding:10px 22px;border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;transition:all 0.25s;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.reserve-btn{background:var(--gold);color:var(--navy);border:none;padding:10px 22px;border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;transition:all .25s;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
 .reserve-btn:hover{background:var(--gold-l);transform:translateY(-1px)}
 
 /* ── HERO ── */
-.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=1600&q=90') center/cover no-repeat;transform:scale(1.05);transition:transform 8s ease}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,22,40,0.2) 0%,rgba(10,22,40,0.85) 100%)}
-.hero-content{position:relative;max-width:900px;padding:0 3.5rem 5rem}
-.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--gold-l);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:1.5rem;backdrop-filter:blur(6px)}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:5.2rem;font-weight:600;color:#fff;line-height:1.05;margin-bottom:1.2rem;text-shadow:0 2px 40px rgba(0,0,0,0.3)}
+.hero{position:relative;height:100vh;min-height:660px;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=1800&q=90') center/cover no-repeat;transform:scale(1.06)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(155deg,rgba(10,22,40,.15) 0%,rgba(10,22,40,.88) 100%)}
+.hero-content{position:relative;max-width:680px;padding:0 3.5rem 5.5rem;z-index:2}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.4);color:var(--gold-l);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:1.4rem;backdrop-filter:blur(6px)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:600;color:#fff;line-height:1.06;margin-bottom:1.1rem;text-shadow:0 2px 40px rgba(0,0,0,.3)}
 .hero h1 em{font-style:italic;color:var(--gold-l)}
-.hero-desc{color:rgba(255,255,255,0.75);font-size:1.1rem;font-weight:300;max-width:540px;line-height:1.7;margin-bottom:2.5rem}
-.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:3rem}
-.btn-primary{background:var(--gold);color:var(--navy);border:none;padding:14px 32px;border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;text-decoration:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{background:var(--gold-l);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:14px 32px;border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:15px;font-weight:400;text-decoration:none;transition:all 0.25s;backdrop-filter:blur(6px)}
+.hero-desc{color:rgba(255,255,255,.72);font-size:1.05rem;font-weight:300;max-width:500px;line-height:1.75;margin-bottom:2.2rem}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:2.8rem}
+.btn-primary{background:var(--gold);color:var(--navy);border:none;padding:13px 30px;border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px;letter-spacing:.02em}
+.btn-primary:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,168,76,.35)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);padding:13px 30px;border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:14px;font-weight:400;text-decoration:none;transition:all .25s;backdrop-filter:blur(6px)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.12)}
-.hero-stat .n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--gold-l);line-height:1}
-.hero-stat .l{font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:0.06em;margin-top:2px}
-.scroll-hint{position:absolute;bottom:2rem;right:3.5rem;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.4);font-size:11px;letter-spacing:0.12em;text-transform:uppercase}
-.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,rgba(201,168,76,0.6),transparent);animation:scrollPulse 2s ease-in-out infinite}
-@keyframes scrollPulse{0%,100%{opacity:0.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(0.6)}}
+.hero-stats{display:flex;gap:2.2rem;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.12)}
+.hero-stat .n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold-l);line-height:1}
+.hero-stat .l{font-size:11.5px;color:rgba(255,255,255,.48);letter-spacing:.06em;margin-top:3px}
 
-/* ── SECTION ── */
-.section{max-width:1160px;margin:0 auto;padding:5rem 2rem}
-.s-tag{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:6px}
-.s-title{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:8px}
-.s-lead{color:#5A5A5A;font-size:1rem;max-width:600px;margin-bottom:3rem;font-weight:300}
+/* ── HERO LOGO FLOTANT ── */
+.hero-logo-float{position:absolute;right:7%;top:50%;transform:translateY(-50%);z-index:3;animation:logoFloat 6s ease-in-out infinite;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5)) drop-shadow(0 0 80px rgba(201,168,76,.25));pointer-events:none}
+.hero-logo-float img{width:340px;height:auto;border-radius:20px}
+@keyframes logoFloat{0%,100%{transform:translateY(-50%) translateY(0px)}50%{transform:translateY(-50%) translateY(-28px)}}
+.scroll-hint{position:absolute;bottom:2.2rem;right:3.5rem;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.35);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;z-index:2}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(201,168,76,.6),transparent);animation:scrollP 2.2s ease-in-out infinite}
+@keyframes scrollP{0%,100%{opacity:.4}50%{opacity:1}}
 
-/* ── CITY GRID ── */
-.city-mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:14px;margin-bottom:1rem}
+/* ── SECTIONS ── */
+.section{max-width:1160px;margin:0 auto;padding:5.5rem 2rem}
+.s-tag{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);margin-bottom:6px;display:block}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:10px}
+.s-lead{color:#5A5A5A;font-size:.97rem;max-width:580px;margin-bottom:3rem;font-weight:300;line-height:1.7}
+.sep-line{height:1px;background:var(--cream-dd);max-width:1160px;margin:0 auto}
+
+/* ── CITY MOSAIC ── */
+.city-mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:290px 290px;gap:14px}
 .city-mosaic .c0{grid-column:1/2;grid-row:1/2}
 .city-mosaic .c1{grid-column:2/4;grid-row:1/2}
 .city-mosaic .c2{grid-column:1/3;grid-row:2/3}
 .city-mosaic .c3{grid-column:3/4;grid-row:2/3}
 .city-card{border-radius:var(--r);overflow:hidden;position:relative;height:100%}
-.city-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.7s cubic-bezier(.23,1,.32,1)}
+.city-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.23,1,.32,1)}
 .city-card:hover img{transform:scale(1.08)}
-.city-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem}
-.city-label{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:#fff;line-height:1.1}
-.city-sub{font-size:12px;color:var(--gold-l);letter-spacing:0.06em;margin-top:3px}
-.city-badge{position:absolute;top:14px;left:14px;background:rgba(201,168,76,0.9);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+.city-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.92) 0%,rgba(10,22,40,.05) 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem}
+.city-label{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:#fff;line-height:1.1}
+.city-sub{font-size:11.5px;color:var(--gold-l);letter-spacing:.06em;margin-top:3px}
+.city-badge{position:absolute;top:14px;left:14px;background:rgba(201,168,76,.9);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
 
-/* ── PLAN SELECT SECTION ── */
-.plans-intro{text-align:center;padding:5rem 2rem 3rem}
-.plans-intro .s-tag{justify-content:center;display:block}
-.plans-intro .s-title{font-size:3rem}
-.plan-cards-grid{max-width:1160px;margin:0 auto;padding:0 2rem 6rem;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.plan-select-card{border-radius:18px;overflow:hidden;position:relative;cursor:none;transition:transform 0.35s cubic-bezier(.23,1,.32,1),box-shadow 0.35s}
-.plan-select-card:hover{transform:translateY(-8px);box-shadow:0 32px 64px rgba(0,0,0,0.15)}
-.plan-card-img{height:240px;position:relative;overflow:hidden}
-.plan-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s}
-.plan-select-card:hover .plan-card-img img{transform:scale(1.06)}
-.plan-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,0.5))}
-.plan-badge{position:absolute;top:16px;right:16px;z-index:2;font-size:24px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+/* ── PARALLAX ── */
+.parallax-section{position:relative;overflow:hidden;height:400px;display:flex;align-items:center;justify-content:center}
+.parallax-bg{position:absolute;inset:-70px;background-size:cover;background-position:center;background-repeat:no-repeat}
+.parallax-bg::after{content:'';position:absolute;inset:0;background:rgba(10,22,40,.65)}
+.parallax-text{position:relative;text-align:center;color:#fff;padding:0 2rem}
+.parallax-text h2{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:#fff;margin-bottom:12px}
+.parallax-text p{font-size:1rem;color:rgba(255,255,255,.68);max-width:500px;margin:0 auto 1.8rem;font-weight:300}
+
+/* ── PLAN CARDS ── */
+.plans-intro{text-align:center;padding:5.5rem 2rem 3rem;background:linear-gradient(to bottom,var(--cream),#fff)}
+.plan-cards-grid{max-width:1160px;margin:0 auto;padding:0 2rem 6rem;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;background:linear-gradient(to bottom,#fff,var(--cream))}
+.plan-select-card{border-radius:18px;overflow:hidden;transition:transform .38s cubic-bezier(.23,1,.32,1),box-shadow .38s;box-shadow:0 2px 20px rgba(0,0,0,.07)}
+.plan-select-card:hover{transform:translateY(-10px);box-shadow:0 36px 72px rgba(0,0,0,.14)}
+.plan-card-img{height:230px;position:relative;overflow:hidden}
+.plan-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.plan-select-card:hover .plan-card-img img{transform:scale(1.07)}
+.plan-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.45))}
+.plan-badge{position:absolute;top:14px;right:14px;z-index:2;font-size:22px;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .plan-badge-eco{background:var(--g1l);border:2px solid var(--g1b)}
 .plan-badge-est{background:var(--b2l);border:2px solid var(--b2b)}
 .plan-badge-cmp{background:var(--o3l);border:2px solid var(--o3b)}
-.plan-card-body{padding:1.6rem;background:#fff;border:1px solid var(--cream-dd);border-top:none}
-.plan-card-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;margin-bottom:4px}
-.plan-eco .plan-card-name{color:var(--g1)}
-.plan-est .plan-card-name{color:var(--b2)}
-.plan-cmp .plan-card-name{color:var(--o3)}
-.plan-card-desc{font-size:13px;color:#6A6A6A;margin-bottom:1.2rem;font-weight:300;line-height:1.5}
-.plan-price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:1.2rem}
-.plan-price-big{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700}
-.plan-eco .plan-price-big{color:var(--g1)}
-.plan-est .plan-price-big{color:var(--b2)}
-.plan-cmp .plan-price-big{color:var(--o3)}
-.plan-price-per{font-size:13px;color:#888}
-.plan-features{list-style:none;margin-bottom:1.4rem;display:flex;flex-direction:column;gap:6px}
+.plan-card-body{padding:1.5rem;background:#fff;border:1px solid var(--cream-dd);border-top:none;border-radius:0 0 18px 18px}
+.plan-card-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;margin-bottom:5px}
+.plan-eco .plan-card-name{color:var(--g1)}.plan-est .plan-card-name{color:var(--b2)}.plan-cmp .plan-card-name{color:var(--o3)}
+.plan-card-desc{font-size:13px;color:#6A6A6A;margin-bottom:1.1rem;font-weight:300;line-height:1.55}
+.plan-price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:1.1rem}
+.plan-price-big{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:700}
+.plan-eco .plan-price-big{color:var(--g1)}.plan-est .plan-price-big{color:var(--b2)}.plan-cmp .plan-price-big{color:var(--o3)}
+.plan-price-per{font-size:12.5px;color:#888}
+.plan-features{list-style:none;margin-bottom:1.3rem;display:flex;flex-direction:column;gap:6px}
 .plan-features li{font-size:13px;display:flex;align-items:center;gap:8px;color:#444}
-.plan-features li::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.plan-eco .plan-features li::before{background:var(--g1)}
-.plan-est .plan-features li::before{background:var(--b2)}
-.plan-cmp .plan-features li::before{background:var(--o3)}
-.open-plan-btn{width:100%;padding:12px;border:none;border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;transition:all 0.25s;letter-spacing:0.04em;display:flex;align-items:center;justify-content:center;gap:8px}
+.plan-features li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.plan-eco .plan-features li::before{background:var(--g1)}.plan-est .plan-features li::before{background:var(--b2)}.plan-cmp .plan-features li::before{background:var(--o3)}
+.open-plan-btn{width:100%;padding:12px;border:none;border-radius:var(--rs);font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:600;transition:all .25s;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:8px}
 .plan-eco .open-plan-btn{background:var(--g1l);color:var(--g1);border:1.5px solid var(--g1b)}
 .plan-eco .open-plan-btn:hover{background:var(--g1);color:#fff}
 .plan-est .open-plan-btn{background:var(--b2l);color:var(--b2);border:1.5px solid var(--b2b)}
@@ -130,187 +133,184 @@ nav a:hover::after{width:100%}
 .plan-cmp .open-plan-btn{background:var(--o3l);color:var(--o3);border:1.5px solid var(--o3b)}
 .plan-cmp .open-plan-btn:hover{background:var(--o3);color:#fff}
 
-/* ── MODAL OVERLAY ── */
-.modal-overlay{position:fixed;inset:0;background:rgba(5,12,25,0.85);backdrop-filter:blur(8px);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
-.modal-overlay.open{display:flex}
-.modal-box{background:var(--cream);border-radius:22px;max-width:1040px;width:100%;position:relative;animation:modalIn 0.45s cubic-bezier(.23,1,.32,1)}
-@keyframes modalIn{from{opacity:0;transform:translateY(40px) scale(0.97)}to{opacity:1;transform:none}}
-.modal-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,0.08);border:none;font-size:18px;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 0.2s;color:#333}
-.modal-close:hover{background:rgba(0,0,0,0.15)}
-.modal-hero{border-radius:22px 22px 0 0;overflow:hidden;height:280px;position:relative}
-.modal-hero img{width:100%;height:100%;object-fit:cover}
-.modal-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(10,22,40,0.8))}
-.modal-hero-text{position:absolute;bottom:0;left:0;right:0;padding:2rem 2.5rem}
-.modal-hero-text h2{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#fff}
-.modal-hero-text p{color:rgba(255,255,255,0.7);font-size:14px;margin-top:4px}
-.modal-body{padding:2.5rem}
+/* ── HOTELS SECTION ── */
+.hotels-section{background:#fff;padding:5.5rem 0}
+.hotels-inner{max-width:1160px;margin:0 auto;padding:0 2rem}
+.hotels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem}
+.hotel-card{border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);transition:transform .35s,box-shadow .35s;background:#fff;border:1px solid var(--cream-dd)}
+.hotel-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.13)}
+.hotel-img{height:200px;overflow:hidden;position:relative}
+.hotel-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.hotel-card:hover .hotel-img img{transform:scale(1.06)}
+.hotel-stars{position:absolute;bottom:12px;left:12px;background:rgba(10,22,40,.85);color:var(--gold-l);font-size:12px;padding:4px 10px;border-radius:20px;letter-spacing:.06em}
+.hotel-tier{position:absolute;top:12px;right:12px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+.tier-eco{background:var(--g1l);color:var(--g1)}.tier-est{background:var(--b2l);color:var(--b2)}.tier-cmp{background:var(--o3l);color:var(--o3)}
+.hotel-body{padding:1.2rem}
+.hotel-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+.hotel-city{font-size:11.5px;color:#888;letter-spacing:.06em;margin-bottom:8px;text-transform:uppercase}
+.hotel-desc{font-size:12.5px;color:#666;line-height:1.55;margin-bottom:10px;font-weight:300}
+.hotel-price-row{display:flex;align-items:center;justify-content:space-between}
+.hotel-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700}
+.hotel-card.eco-h .hotel-price{color:var(--g1)}.hotel-card.est-h .hotel-price{color:var(--b2)}.hotel-card.cmp-h .hotel-price{color:var(--o3)}
+.hotel-price small{font-family:'Outfit',sans-serif;font-size:11px;color:#aaa;font-weight:300}
+.hotel-link{font-size:12px;font-weight:600;text-decoration:none;padding:6px 14px;border-radius:6px;transition:all .2s}
+.hotel-card.eco-h .hotel-link{background:var(--g1l);color:var(--g1)}.hotel-card.eco-h .hotel-link:hover{background:var(--g1);color:#fff}
+.hotel-card.est-h .hotel-link{background:var(--b2l);color:var(--b2)}.hotel-card.est-h .hotel-link:hover{background:var(--b2);color:#fff}
+.hotel-card.cmp-h .hotel-link{background:var(--o3l);color:var(--o3)}.hotel-card.cmp-h .hotel-link:hover{background:var(--o3);color:#fff}
 
-/* ── MODAL MAP ── */
+/* ── REVIEWS CAROUSEL ── */
+.reviews-section{background:var(--navy);padding:5.5rem 0;overflow:hidden}
+.reviews-header{max-width:1160px;margin:0 auto;padding:0 2rem 3rem}
+.reviews-track-wrap{position:relative;overflow:hidden}
+.reviews-track-wrap::before,.reviews-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.reviews-track-wrap::before{left:0;background:linear-gradient(to right,var(--navy),transparent)}
+.reviews-track-wrap::after{right:0;background:linear-gradient(to left,var(--navy),transparent)}
+.reviews-track{display:flex;gap:20px;animation:scrollReviews 40s linear infinite;width:max-content;padding:8px 0 16px}
+.reviews-track:hover{animation-play-state:paused}
+.review-card{background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:1.6rem 1.8rem;min-width:320px;max-width:320px;transition:border-color .3s,background .3s}
+.review-card:hover{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.35)}
+.review-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:10px}
+.review-text{font-size:13.5px;color:rgba(255,255,255,.72);line-height:1.65;font-style:italic;font-weight:300;margin-bottom:14px}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,168,76,.3)}
+.review-name{font-size:13px;font-weight:600;color:#fff}
+.review-meta{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.04em}
+@keyframes scrollReviews{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── WHY SECTION ── */
+.why-strip{background:var(--navy);padding:5.5rem 2rem;border-top:1px solid rgba(255,255,255,.06)}
+.why-inner{max-width:1160px;margin:0 auto}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:2.5rem}
+.why-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:1.6rem;transition:border-color .3s,background .3s,transform .3s}
+.why-card:hover{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.4);transform:translateY(-4px)}
+.why-icon{font-size:2.1rem;margin-bottom:12px}
+.why-card h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:7px}
+.why-card p{font-size:12.5px;color:rgba(255,255,255,.48);line-height:1.65;font-weight:300}
+
+/* ── POWERED BY ── */
+.powered-bar{background:var(--navy-m);border-top:1px solid rgba(201,168,76,.15);text-align:center;padding:.75rem 2rem}
+.powered-bar span{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.12em}
+.powered-bar strong{color:var(--gold);font-weight:600;letter-spacing:.08em}
+
+/* ── FOOTER ── */
+.footer{background:rgba(5,12,24,1);padding:4rem 2rem 2.5rem;border-top:1px solid rgba(201,168,76,.12)}
+.footer-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 2fr;gap:3.5rem;margin-bottom:3rem}
+.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff;margin-bottom:4px}
+.footer-brand-name span{color:var(--gold)}
+.footer-brand-sub{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:13px}
+.footer-brand p{font-size:12.5px;color:rgba(255,255,255,.33);line-height:1.7;max-width:280px;font-weight:300}
+.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.footer-col h5{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:600}
+.footer-col a{display:block;font-size:12.5px;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:8px;transition:color .2s;font-weight:300}
+.footer-col a:hover{color:rgba(255,255,255,.8)}
+.footer-bottom{max-width:1160px;margin:0 auto;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-size:11.5px;color:rgba(255,255,255,.22)}
+
+/* ── MODALS ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(5,12,25,.87);backdrop-filter:blur(10px);z-index:2000;display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--cream);border-radius:22px;max-width:1040px;width:100%;position:relative;animation:modalIn .42s cubic-bezier(.23,1,.32,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(36px) scale(.97)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.08);border:none;font-size:17px;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;color:#333}
+.modal-close:hover{background:rgba(0,0,0,.15)}
+.modal-hero{border-radius:22px 22px 0 0;overflow:hidden;height:270px;position:relative}
+.modal-hero img{width:100%;height:100%;object-fit:cover}
+.modal-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(10,22,40,.82))}
+.modal-hero-text{position:absolute;bottom:0;left:0;right:0;padding:1.8rem 2.4rem}
+.modal-hero-text h2{font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:700;color:#fff}
+.modal-hero-text p{color:rgba(255,255,255,.68);font-size:13.5px;margin-top:4px}
+.modal-body{padding:2.4rem}
 .modal-map{border-radius:var(--r);overflow:hidden;height:340px;margin-bottom:2rem;border:1px solid var(--cream-dd)}
 .modal-map iframe{width:100%;height:100%;border:none;display:block}
 
 /* ── DAY TIMELINE ── */
-.day-timeline{display:flex;flex-direction:column;gap:0;position:relative;margin-bottom:2rem}
+.day-timeline{display:flex;flex-direction:column;position:relative;margin-bottom:2rem}
 .day-timeline::before{content:'';position:absolute;left:32px;top:28px;bottom:28px;width:2px;background:var(--cream-dd)}
-.day-item{display:grid;grid-template-columns:64px 1fr;gap:0;position:relative}
+.day-item{display:grid;grid-template-columns:64px 1fr;position:relative}
 .day-dot{width:64px;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:4px;flex-shrink:0}
 .day-dot-circle{width:22px;height:22px;border-radius:50%;border:3px solid var(--cream);box-shadow:0 0 0 2px currentColor;background:#fff;flex-shrink:0;z-index:1}
-.day-connector{width:2px;flex:1;background:var(--cream-dd)}
-.day-content-box{padding:16px 0 16px 16px}
-.day-card-inner{background:#fff;border:1px solid var(--cream-dd);border-radius:14px;overflow:hidden;margin-bottom:4px;transition:box-shadow 0.25s}
-.day-card-inner:hover{box-shadow:0 8px 30px rgba(0,0,0,0.08)}
-.day-card-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 10px;border-bottom:1px solid var(--cream-dd)}
-.day-card-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--navy)}
-.day-card-city{font-size:12px;color:#888;font-weight:400}
+.day-content-box{padding:14px 0 14px 16px}
+.day-card-inner{background:#fff;border:1px solid var(--cream-dd);border-radius:14px;overflow:hidden;margin-bottom:4px;transition:box-shadow .25s}
+.day-card-inner:hover{box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.day-card-header{display:flex;align-items:center;justify-content:space-between;padding:13px 17px 9px;border-bottom:1px solid var(--cream-dd)}
+.day-card-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--navy)}
+.day-card-city{font-size:11.5px;color:#888}
 .day-card-cost-badge{font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px}
-.day-card-body{padding:14px 18px}
-.accom-row{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--cream);border-radius:8px;margin-bottom:12px;font-size:13px;color:#555}
-.accom-row a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--cream-dd);transition:border-color 0.2s}
+.day-card-body{padding:13px 17px}
+.accom-row{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--cream);border-radius:8px;margin-bottom:11px;font-size:12.5px;color:#555}
+.accom-row a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--cream-dd);transition:border-color .2s}
 .accom-row a:hover{border-color:var(--gold)}
 .activities-list{display:flex;flex-wrap:wrap;gap:6px}
-.act-pill{font-size:12px;padding:5px 12px;border-radius:20px;font-weight:500;display:flex;align-items:center;gap:5px;text-decoration:none;transition:all 0.2s}
+.act-pill{font-size:12px;padding:5px 11px;border-radius:20px;font-weight:500;display:flex;align-items:center;gap:4px;text-decoration:none;transition:all .2s}
 .act-pill.free{background:#EAF3DE;color:var(--g1)}
 .act-pill.paid{background:#FFF3CD;color:#7A5C00}
-.act-pill.link{background:#E8F1FB;color:var(--b2);text-decoration:none}
+.act-pill.link{background:#E8F1FB;color:var(--b2)}
 .act-pill.link:hover{background:var(--b2);color:#fff}
-.day-cost-summary{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.cost-chip{background:var(--cream-d);border-radius:8px;padding:8px 12px;font-size:12px;text-align:center}
-.cost-chip .cv{font-weight:700;font-size:16px;color:var(--navy);display:block}
+.day-cost-summary{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.cost-chip{background:var(--cream-d);border-radius:8px;padding:8px 11px;font-size:11.5px;text-align:center}
+.cost-chip .cv{font-weight:700;font-size:15px;color:var(--navy);display:block}
 .cost-chip .cl{color:#888;display:block;margin-top:1px}
-
-/* ── TOTAL TABLE ── */
 .total-section{background:var(--navy);border-radius:16px;padding:2rem;margin-bottom:2rem}
-.total-section h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--gold-l);margin-bottom:1.2rem}
+.total-section h3{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--gold-l);margin-bottom:1.2rem}
 .total-table{width:100%;border-collapse:collapse}
-.total-table tr{border-bottom:1px solid rgba(255,255,255,0.08)}
+.total-table tr{border-bottom:1px solid rgba(255,255,255,.08)}
 .total-table tr:last-child{border-bottom:2px solid var(--gold);font-weight:700}
-.total-table td{padding:10px 4px;color:rgba(255,255,255,0.75);font-size:14px}
+.total-table td{padding:10px 4px;color:rgba(255,255,255,.72);font-size:13.5px}
 .total-table td:last-child{text-align:right;color:#fff;font-weight:600}
-.total-table tr:last-child td{color:var(--gold-l);font-size:16px}
+.total-table tr:last-child td{color:var(--gold-l);font-size:15.5px}
 
-/* ── WHY BELGIUM ── */
-.why-strip{background:var(--navy);padding:5rem 2rem}
-.why-inner{max-width:1160px;margin:0 auto}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:2.5rem}
-.why-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:16px;padding:1.6rem;transition:border-color 0.3s,background 0.3s}
-.why-card:hover{background:rgba(201,168,76,0.06);border-color:rgba(201,168,76,0.4)}
-.why-icon{font-size:2.2rem;margin-bottom:12px}
-.why-card h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px}
-.why-card p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.65;font-weight:300}
-
-/* ── FOOTER ── */
-.footer{background:rgba(5,12,24,1);padding:4rem 2rem 2.5rem;border-top:1px solid rgba(201,168,76,0.15)}
-.footer-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:3rem;margin-bottom:3rem}
-.footer-brand .logo-name{font-size:1.5rem;margin-bottom:4px}
-.footer-brand .logo-sub{display:block;margin-bottom:12px}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,0.35);line-height:1.7;max-width:280px;font-weight:300}
-.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.footer-col h5{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:600}
-.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:8px;transition:color 0.2s;font-weight:300}
-.footer-col a:hover{color:rgba(255,255,255,0.8)}
-.footer-bottom{max-width:1160px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
-.footer-bottom p{font-size:12px;color:rgba(255,255,255,0.25)}
-
-/* ── PARALLAX BG ── */
-.parallax-section{position:relative;overflow:hidden;height:380px;display:flex;align-items:center;justify-content:center}
-.parallax-bg{position:absolute;inset:-60px;background:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1400&q=80') center/cover no-repeat}
-.parallax-bg::after{content:'';position:absolute;inset:0;background:rgba(10,22,40,0.65)}
-.parallax-text{position:relative;text-align:center;color:#fff}
-.parallax-text h2{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:600;color:#fff;margin-bottom:12px}
-.parallax-text p{font-size:1.05rem;color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto 2rem;font-weight:300}
-
-/* ── RESPONSIVE ── */
 @media(max-width:900px){
-  .hero h1{font-size:3.4rem}
-  .city-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}
+  .hero h1{font-size:3.2rem}
+  .hero-logo-float{display:none}
+  .city-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
   .city-mosaic .c0,.city-mosaic .c1,.city-mosaic .c2,.city-mosaic .c3{grid-column:auto;grid-row:auto}
   .plan-cards-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .hotels-grid{grid-template-columns:1fr}
   nav{display:none}
-}
-
-/* ── LOGO FLOTANTE EN HERO ── */
-.hero-logo-float {
-  position: absolute;
-  top: 18%;
-  right: 8%;
-  z-index: 10;
-  animation: floatLogo 8s ease-in-out infinite;
-  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.4));
-  pointer-events: none;
-}
-
-.hero-logo-float img {
-  width: 320px;
-  height: auto;
-}
-
-@keyframes floatLogo {
-  0%, 100% { transform: translateY(0px) rotate(-5deg); }
-  50% { transform: translateY(-35px) rotate(5deg); }
-}
-
-/* Ajustes según tamaño de pantalla */
-@media(max-width: 1200px) {
-  .hero-logo-float {
-    right: 6%;
-    top: 20%;
-  }
-  .hero-logo-float img {
-    width: 280px;
-  }
-}
-
-@media(max-width: 900px) {
-  .hero-logo-float {
-    display: none; /* Se oculta en móvil para no tapar texto */
-  }
-}
-
-@media(max-width:900px) {
-  .hero-logo-float {
-    display: none; /* Oculto en móvil para no molestar */
-  }
+  .footer-inner{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- CURSOR -->
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
 <div id="cursor-glow"></div>
 <canvas id="particles-canvas"></canvas>
 
-<!-- HEADER -->
+<!-- ═══ HEADER ═══ -->
 <header class="site-header">
   <a class="logo-wrap" href="#">
     <div class="logo-emblem">
-      <img src="https://cdn.corenexis.com/files/c/3846569720.png" 
-           alt="Planti i Presi" 
-           style="width:100%; height:100%; object-fit:contain;">
+      <img src="https://cdn.corenexis.com/files/c/3846569720.png" alt="Logo Planti i Presi">
     </div>
     <div class="logo-text-wrap">
-      <span class="logo-name">Planti i Presi · Cingle</span>
+      <span class="logo-name">Planti i Presi <span>·</span> Cingle</span>
       <span class="logo-sub">Agència de Viatges</span>
     </div>
   </a>
-  <nav>    
+  <nav>
+    <a href="#ciutats">Ciutats</a>
     <a href="#plans">Plans</a>
+    <a href="#hotels">Hotels</a>
+    <a href="#opinions">Opinions</a>
     <a href="#perque">Per què Bèlgica?</a>
-    <a href="#contacte">Contacte</a>
   </nav>
-  <a href="mailto:info@plantipresi.com" class="reserve-btn">
-    <span>✦</span> Reservar ara
-  </a>
+  <a href="mailto:info@plantipresi.com" class="reserve-btn"><span>✦</span> Reservar ara</a>
 </header>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
+
+  <!-- LOGO GRAN FLOTANT A LA DRETA -->
+  <div class="hero-logo-float">
+    <img src="https://cdn.corenexis.com/files/c/3846569720.png" alt="Planti i Presi Cingle">
+  </div>
+
   <div class="hero-content">
-    <!-- LOGO GRANDE EN HERO (Zona derecha) -->
-       <div class="hero-kicker">✦ Destí especial — Temporada 2025</div>
+    <div class="hero-kicker">✦ Destí especial — Temporada 2025</div>
     <h1>El cor medieval<br>de <em>Bèlgica</em></h1>
     <p class="hero-desc">Brussel·les, Bruges, Gant, Anvers i més. Xocolata artesanal, cerveses úniques i arquitectura gòtica a cada cantonada.</p>
     <div class="hero-actions">
@@ -320,27 +320,27 @@ nav a:hover::after{width:100%}
     <div class="hero-stats">
       <div class="hero-stat"><div class="n">7</div><div class="l">dies de ruta</div></div>
       <div class="hero-stat"><div class="n">6</div><div class="l">ciutats</div></div>
-      <div class="hero-stat"><div class="n">3</div><div class="l">plans disponibles</div></div>
+      <div class="hero-stat"><div class="n">3</div><div class="l">plans</div></div>
       <div class="hero-stat"><div class="n">495€</div><div class="l">des de / persona</div></div>
     </div>
   </div>
   <div class="scroll-hint"><div class="scroll-line"></div><span>Desplaça</span></div>
 </section>
 
-<!-- CITIES -->
+<!-- ═══ CIUTATS ═══ -->
 <section class="section" id="ciutats">
-  <p class="s-tag">✦ El destí</p>
+  <span class="s-tag">✦ El destí</span>
   <h2 class="s-title">Ciutats que t'esperen</h2>
   <p class="s-lead">Bèlgica condensa segles d'història en distàncies curtes. Cada ciutat té el seu caràcter únic.</p>
   <div class="city-mosaic">
     <div class="city-card c0">
       <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=700&q=85" alt="Brussel·les" loading="lazy">
-      <div class="city-overlay"><div class="city-label">Brussel·les<div class="city-sub">Grand Place · Atomium · Parlamento Europeo</div></div></div>
+      <div class="city-overlay"><div class="city-label">Brussel·les<div class="city-sub">Grand Place · Atomium · Parlament Europeu</div></div></div>
       <div class="city-badge">Capital</div>
     </div>
     <div class="city-card c1">
       <img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=900&q=85" alt="Bruges" loading="lazy">
-      <div class="city-overlay"><div class="city-label">Bruges<div class="city-sub">La Venècia del Nord · Canals medievals · Patrimoni UNESCO</div></div></div>
+      <div class="city-overlay"><div class="city-label">Bruges<div class="city-sub">La Venècia del Nord · Canals medievals · UNESCO</div></div></div>
       <div class="city-badge">Imprescindible</div>
     </div>
     <div class="city-card c2">
@@ -356,9 +356,9 @@ nav a:hover::after{width:100%}
   </div>
 </section>
 
-<!-- PARALLAX STRIP -->
+<!-- ═══ PARALLAX 1 ═══ -->
 <div class="parallax-section">
-  <div class="parallax-bg" id="parallaxBg"></div>
+  <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&q=80')"></div>
   <div class="parallax-text">
     <h2>"La Grand Place és la plaça<br>més bella del món"</h2>
     <p>Víctor Hugo, escriptor i viatger del segle XIX</p>
@@ -366,15 +366,14 @@ nav a:hover::after{width:100%}
   </div>
 </div>
 
-<!-- PLANS -->
+<!-- ═══ PLANS ═══ -->
 <div class="plans-intro" id="plans">
-  <p class="s-tag">✦ Tria la teva ruta</p>
-  <h2 class="s-title">Tres maneres de viure Bèlgica</h2>
-  <p class="s-lead" style="margin:0 auto 0">Des de l'aventura més econòmica fins a l'experiència més completa. Tots els plans surten de Barcelona.</p>
+  <span class="s-tag" style="display:block">✦ Tria la teva ruta</span>
+  <h2 class="s-title" style="font-size:3rem">Tres maneres de viure Bèlgica</h2>
+  <p class="s-lead" style="margin:0 auto">Des de l'aventura més econòmica fins a l'experiència més completa. Tots els plans surten de Barcelona.</p>
 </div>
 
 <div class="plan-cards-grid">
-  <!-- PLAN ECO -->
   <div class="plan-select-card plan-eco">
     <div class="plan-card-img">
       <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=700&q=80" alt="Pla Econòmic">
@@ -385,17 +384,13 @@ nav a:hover::after{width:100%}
       <div class="plan-card-desc">7 dies · Hostels compartits · Transport públic · Màxim aprofitament al menor cost possible</div>
       <div class="plan-price-row"><span class="plan-price-big">495 €</span><span class="plan-price-per">/ persona · tot inclòs</span></div>
       <ul class="plan-features">
-        <li>Hostels des de 25 €/nit</li>
-        <li>Trens interurbans inclosos</li>
-        <li>Majoria de visites gratuïtes</li>
-        <li>Vol BCN–BRU des de 100 €</li>
+        <li>Hostels des de 25 €/nit</li><li>Trens interurbans inclosos</li>
+        <li>Majoria de visites gratuïtes</li><li>Vol BCN–BRU des de 100 €</li>
         <li>Brussel·les, Bruges, Gant, Anvers</li>
       </ul>
       <button class="open-plan-btn" onclick="openModal('eco')">Veure itinerari complet →</button>
     </div>
   </div>
-
-  <!-- PLAN EST -->
   <div class="plan-select-card plan-est">
     <div class="plan-card-img">
       <img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=700&q=80" alt="Pla Estudiants">
@@ -406,17 +401,13 @@ nav a:hover::after{width:100%}
       <div class="plan-card-desc">7 dies · Hostels moderns · Descomptes jove · Experiències úniques sense excesos</div>
       <div class="plan-price-row"><span class="plan-price-big">650–700 €</span><span class="plan-price-per">/ persona · tot inclòs</span></div>
       <ul class="plan-features">
-        <li>Hostels moderns des de 30 €/nit</li>
-        <li>Descomptes estudiant als museus</li>
-        <li>Passeig en vaixell pels canals</li>
-        <li>Castell dels Comtes · Campanar</li>
+        <li>Hostels moderns des de 30 €/nit</li><li>Descomptes estudiant als museus</li>
+        <li>Passeig en vaixell pels canals</li><li>Castell dels Comtes · Campanar</li>
         <li>Lovaina inclosa — la + famosa</li>
       </ul>
       <button class="open-plan-btn" onclick="openModal('est')">Veure itinerari complet →</button>
     </div>
   </div>
-
-  <!-- PLAN CMP -->
   <div class="plan-select-card plan-cmp">
     <div class="plan-card-img">
       <img src="https://images.unsplash.com/photo-1558642891-54be180ea339?w=700&q=80" alt="Pla Complet">
@@ -427,10 +418,8 @@ nav a:hover::after{width:100%}
       <div class="plan-card-desc">7 dies · Hotels 3★ cèntrics · Totes les entrades · L'experiència més completa de Bèlgica</div>
       <div class="plan-price-row"><span class="plan-price-big">1.300 €</span><span class="plan-price-per">/ persona · tot inclòs</span></div>
       <ul class="plan-features">
-        <li>Hotels 3★ des de 90 €/nit</li>
-        <li>6 ciutats en 7 dies</li>
-        <li>Totes les entrades incloses</li>
-        <li>Creuer urbà per Gant</li>
+        <li>Hotels 3★ des de 90 €/nit</li><li>6 ciutats en 7 dies</li>
+        <li>Totes les entrades incloses</li><li>Creuer urbà per Gant</li>
         <li>Dinant i Lovaina incloses</li>
       </ul>
       <button class="open-plan-btn" onclick="openModal('cmp')">Veure itinerari complet →</button>
@@ -438,73 +427,337 @@ nav a:hover::after{width:100%}
   </div>
 </div>
 
-<!-- WHY BELGIUM -->
+<!-- ═══ HOTELS ═══ -->
+<section class="hotels-section" id="hotels">
+  <div class="hotels-inner">
+    <span class="s-tag">✦ On allotjar-se</span>
+    <h2 class="s-title">Hotels i hostels seleccionats</h2>
+    <p class="s-lead">Hem triat el millor allotjament de cada categoria per a cada pressupost. Qualitat garantida.</p>
+
+    <div class="hotels-grid">
+
+      <!-- ECO -->
+      <div class="hotel-card eco-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Snuffel Hostel Bruges" loading="lazy">
+          <div class="hotel-stars">★★ Hostel</div>
+          <div class="hotel-tier tier-eco">💰 Econòmic</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">Snuffel Hostel</div>
+          <div class="hotel-city">📍 Bruges · Pla Econòmic</div>
+          <div class="hotel-desc">Hostel icònic al centre de Bruges. Ambient jove i internacional, bar propi i lliteres còmodes en zones comunes animades.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">25–30 €</span><small> / nit · compartit</small></div>
+            <a href="https://www.hostelworld.com/st/hostels/p/254/snuffel-hostel/" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card eco-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80" alt="Hostel Uppelink Gant" loading="lazy">
+          <div class="hotel-stars">★★ Hostel</div>
+          <div class="hotel-tier tier-eco">💰 Econòmic</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">Hostel Uppelink</div>
+          <div class="hotel-city">📍 Gant · Pla Econòmic</div>
+          <div class="hotel-desc">Vista panoràmica sobre els canals de Gant des del terrat. Un dels hostels amb millor ubicació de Bèlgica, al cor medieval.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">28–35 €</span><small> / nit · compartit</small></div>
+            <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Uppelink/Ghent/94040" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card eco-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="M Hostel Anvers" loading="lazy">
+          <div class="hotel-stars">★★ Hostel</div>
+          <div class="hotel-tier tier-eco">💰 Econòmic</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">M Hostel Anvers</div>
+          <div class="hotel-city">📍 Anvers · Pla Econòmic</div>
+          <div class="hotel-desc">Modern, net i ben connectat. A pocs minuts a peu de l'estació central i els principals monuments d'Anvers.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">28–32 €</span><small> / nit · compartit</small></div>
+            <a href="https://www.hostelworld.com/st/hostels/p/31583/m-hostel/" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- EST -->
+      <div class="hotel-card est-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="MEININGER Brussels" loading="lazy">
+          <div class="hotel-stars">★★★ Hotel-Hostel</div>
+          <div class="hotel-tier tier-est">🎓 Estudiants</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">MEININGER Brussels</div>
+          <div class="hotel-city">📍 Brussel·les · Pla Estudiants</div>
+          <div class="hotel-desc">Format híbrid entre hotel i hostel. Habitacions privades i dormitoris, perfecte per a grups. Excel·lent ubicació prop de la Grand Place.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">30–45 €</span><small> / nit · flex</small></div>
+            <a href="https://www.meininger-hotels.com/en/hotels/brussels/" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card est-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=80" alt="Hostel Bruges" loading="lazy">
+          <div class="hotel-stars">★★★ Hotel</div>
+          <div class="hotel-tier tier-est">🎓 Estudiants</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">Hotel Bruges Centre</div>
+          <div class="hotel-city">📍 Bruges · Pla Estudiants</div>
+          <div class="hotel-desc">Ubicat en un edifici medieval restaurat a 2 minuts de la Plaça Markt. Esmorzar inclòs i wifi gratuït.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">55–75 €</span><small> / nit · doble</small></div>
+            <a href="https://www.booking.com/searchresults.ca.html?city=bruges&stars=3" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card est-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?w=600&q=80" alt="Hotel Gant" loading="lazy">
+          <div class="hotel-stars">★★★ Hotel</div>
+          <div class="hotel-tier tier-est">🎓 Estudiants</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">Hotel Gravensteen Gant</div>
+          <div class="hotel-city">📍 Gant · Pla Estudiants</div>
+          <div class="hotel-desc">A l'ombra del Castell dels Comtes. Decoració contemporània en un edifici del s.XIX amb vistes als canals medievals.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">60–80 €</span><small> / nit · doble</small></div>
+            <a href="https://www.booking.com/hotel/be/gravensteen.ca.html" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLET -->
+      <div class="hotel-card cmp-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80" alt="Hotel De Orangerie Bruges" loading="lazy">
+          <div class="hotel-stars">★★★★ Hotel de luxe</div>
+          <div class="hotel-tier tier-cmp">⭐ Complet</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">Hotel De Orangerie</div>
+          <div class="hotel-city">📍 Bruges · Pla Complet</div>
+          <div class="hotel-desc">Un dels hotels més romàntics de Bèlgica, instal·lat en un convent del s.XV amb vistes directes als canals. Spa i restaurant gastronòmic.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">110–150 €</span><small> / nit</small></div>
+            <a href="https://www.hotelorangerie.be/" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card cmp-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80" alt="Hotel Harmony Gant" loading="lazy">
+          <div class="hotel-stars">★★★★ Boutique Hotel</div>
+          <div class="hotel-tier tier-cmp">⭐ Complet</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">Hotel Harmony Gant</div>
+          <div class="hotel-city">📍 Gant · Pla Complet</div>
+          <div class="hotel-desc">Boutique hotel de disseny al centre medieval de Gant. Piscina exterior, terrassa i vistes al Graslei. Esmorzar luxós inclòs.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">100–140 €</span><small> / nit</small></div>
+            <a href="https://www.hotel-harmony.be/" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card cmp-h">
+        <div class="hotel-img">
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=80" alt="Hotel Amigo Brussels" loading="lazy">
+          <div class="hotel-stars">★★★★★ Hotel</div>
+          <div class="hotel-tier tier-cmp">⭐ Complet</div>
+        </div>
+        <div class="hotel-body">
+          <div class="hotel-name">Hotel Amigo Brussels</div>
+          <div class="hotel-city">📍 Brussel·les · Pla Complet</div>
+          <div class="hotel-desc">Llegenda de la capital belga. A 50 metres de la Grand Place, art flamenc original a les parets i servei de concierge 24h.</div>
+          <div class="hotel-price-row">
+            <div><span class="hotel-price">130–200 €</span><small> / nit</small></div>
+            <a href="https://www.roccofortehotels.com/hotels-and-resorts/hotel-amigo/" target="_blank" class="hotel-link">Veure ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS CAROUSEL ═══ -->
+<section class="reviews-section" id="opinions">
+  <div class="reviews-header">
+    <span class="s-tag" style="color:var(--gold-l)">✦ Opinions reals</span>
+    <h2 class="s-title" style="color:#fff">El que diuen els nostres viatgers</h2>
+    <p class="s-lead" style="color:rgba(255,255,255,.5)">Més de 200 persones han viatjat amb Planti i Presi aquest any. Aquí les seves impressions.</p>
+  </div>
+  <div class="reviews-track-wrap">
+    <div class="reviews-track" id="reviewsTrack">
+      <!-- Reviews x2 per infinite loop -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Increïble experiència! El Pla Complet va superar totes les expectatives. Els hotels eren preciosos i l'itinerari perfectament organitzat. Tornaré segur."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/32.jpg" alt=""><div><div class="review-name">Marta Puigdomènech</div><div class="review-meta">Barcelona · Pla Complet · Juny 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"El Pla Estudiants és una meravella. Vam gastar menys del previst i vam veure molt més del que esperàvem. Bruges és d'un altre món!"</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/45.jpg" alt=""><div><div class="review-name">Jordi Ferrer</div><div class="review-meta">Girona · Pla Estudiants · Abril 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-text">"Vam fer el Pla Econòmic i va ser perfecte. Molt ben explicat tot, els hostels recomanats eren nets i segurs. La Grand Place de nit és màgica."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt=""><div><div class="review-name">Laura Díaz</div><div class="review-meta">Tarragona · Pla Econòmic · Maig 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Gant va ser una sorpresa absoluta. Ningú t'explica lo bonic que és! Gràcies a la ruta de Planti i Presi vam descobrir racons que mai hauríem trobat sols."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/22.jpg" alt=""><div><div class="review-name">Pau Vilagrasa</div><div class="review-meta">Lleida · Pla Estudiants · Març 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"El mapa amb la ruta dins del modal és genial. Podíem veure exactament on anàvem cada dia. Una web molt professional i els preus molt detallats i reals."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/55.jpg" alt=""><div><div class="review-name">Neus Roca</div><div class="review-meta">Sabadell · Pla Complet · Juliol 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Anvers és increïble. L'estació de tren sembla un palau! El Museu MAS va valdre cada euro. Molt content amb el Pla Complet, molt ben organitzat i sense sorpreses."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/78.jpg" alt=""><div><div class="review-name">Marc Bosch</div><div class="review-meta">Badalona · Pla Complet · Agost 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-text">"Els hostels recomanats eren molt millors del que esperàvem per aquell preu. Dinant és un descobriment! La ciutadella amb vistes al Mosa és espectacular."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/14.jpg" alt=""><div><div class="review-name">Carla Pons</div><div class="review-meta">Manresa · Pla Econòmic · Setembre 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Lovaina és la joia oculta de Bèlgica. Plena d'estudiants, cervesa artesanal i un ambient únic. La biblioteca universitària és un edifici impressionant."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/33.jpg" alt=""><div><div class="review-name">Àlex Montserrat</div><div class="review-meta">Vic · Pla Estudiants · Octubre 2025</div></div></div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Increïble experiència! El Pla Complet va superar totes les expectatives. Els hotels eren preciosos i l'itinerari perfectament organitzat. Tornaré segur."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/32.jpg" alt=""><div><div class="review-name">Marta Puigdomènech</div><div class="review-meta">Barcelona · Pla Complet · Juny 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"El Pla Estudiants és una meravella. Vam gastar menys del previst i vam veure molt més del que esperàvem. Bruges és d'un altre món!"</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/45.jpg" alt=""><div><div class="review-name">Jordi Ferrer</div><div class="review-meta">Girona · Pla Estudiants · Abril 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-text">"Vam fer el Pla Econòmic i va ser perfecte. Molt ben explicat tot, els hostels recomanats eren nets i segurs. La Grand Place de nit és màgica."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt=""><div><div class="review-name">Laura Díaz</div><div class="review-meta">Tarragona · Pla Econòmic · Maig 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Gant va ser una sorpresa absoluta. Ningú t'explica lo bonic que és! Gràcies a la ruta de Planti i Presi vam descobrir racons que mai hauríem trobat sols."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/22.jpg" alt=""><div><div class="review-name">Pau Vilagrasa</div><div class="review-meta">Lleida · Pla Estudiants · Març 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"El mapa amb la ruta dins del modal és genial. Podíem veure exactament on anàvem cada dia. Una web molt professional i els preus molt detallats i reals."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/55.jpg" alt=""><div><div class="review-name">Neus Roca</div><div class="review-meta">Sabadell · Pla Complet · Juliol 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Anvers és increïble. L'estació de tren sembla un palau! El Museu MAS va valdre cada euro. Molt content amb el Pla Complet."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/78.jpg" alt=""><div><div class="review-name">Marc Bosch</div><div class="review-meta">Badalona · Pla Complet · Agost 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-text">"Els hostels recomanats eren molt millors del que esperàvem per aquell preu. Dinant és un descobriment! La ciutadella amb vistes al Mosa és espectacular."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/14.jpg" alt=""><div><div class="review-name">Carla Pons</div><div class="review-meta">Manresa · Pla Econòmic · Setembre 2025</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Lovaina és la joia oculta de Bèlgica. Plena d'estudiants, cervesa artesanal i un ambient únic."</div>
+        <div class="review-author"><img class="review-avatar" src="https://randomuser.me/api/portraits/men/33.jpg" alt=""><div><div class="review-name">Àlex Montserrat</div><div class="review-meta">Vic · Pla Estudiants · Octubre 2025</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY ═══ -->
 <div class="why-strip" id="perque">
   <div class="why-inner">
-    <p class="s-tag" style="color:var(--gold-l)">✦ Per què Bèlgica?</p>
+    <span class="s-tag" style="color:var(--gold-l)">✦ Per què Bèlgica?</span>
     <h2 class="s-title" style="color:#fff">Un país que sorprèn</h2>
-    <p class="s-lead" style="color:rgba(255,255,255,0.5);max-width:600px">Petit en mida, gegant en cultura, gastronomia i arquitectura medieval.</p>
+    <p class="s-lead" style="color:rgba(255,255,255,.48);max-width:580px">Petit en mida, gegant en cultura, gastronomia i arquitectura medieval.</p>
     <div class="why-grid">
       <div class="why-card"><div class="why-icon">🍫</div><h4>Xocolata i cervesa</h4><p>Més de 300 cerveses artesanals úniques i la xocolata belga reconeguda com la millor del món des del segle XVIII.</p></div>
-      <div class="why-card"><div class="why-icon">🏰</div><h4>Arquitectura medieval</h4><p>Bruges, Gant i Brussel·les són Patrimoni Mundial UNESCO, conservant intactes les seves places i canals medievals.</p></div>
+      <div class="why-card"><div class="why-icon">🏰</div><h4>Arquitectura medieval</h4><p>Bruges, Gant i Brussel·les, Patrimoni Mundial UNESCO, conserven intactes places i canals medievals impressionants.</p></div>
       <div class="why-card"><div class="why-icon">🚂</div><h4>Tot en tren</h4><p>La xarxa ferroviària belga connecta totes les ciutats en menys d'1 hora. Sense cotxe, sense complicacions.</p></div>
       <div class="why-card"><div class="why-icon">🌍</div><h4>Capital d'Europa</h4><p>Seu del Parlament Europeu i l'OTAN, Brussel·les és cosmopolita, multicultural i extraordinàriament ben conservada.</p></div>
     </div>
   </div>
 </div>
 
-<!-- PARALLAX 2 -->
+<!-- ═══ PARALLAX 2 ═══ -->
 <div class="parallax-section" style="height:300px">
-  <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=1400&q=80')"></div>
+  <div class="parallax-bg" style="background-image:url('https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=1600&q=80')"></div>
   <div class="parallax-text">
     <h2 style="font-size:2.4rem">Dinant · Lovaina · Anvers</h2>
     <p>Les ciutats que fan de Bèlgica un destí inoblidable</p>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ═══ POWERED BY ═══ -->
+<div class="powered-bar">
+  <span>Dissenyat i desenvolupat amb ♥ per <strong>Nasser</strong> · Planti i Presi · Cingle · 2025</span>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
 <footer class="footer" id="contacte">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="logo-name" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff">Planti <span style="color:var(--gold)">&</span> Presi</div>
-      <span class="logo-sub" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);display:block;margin-bottom:12px">Agència de Viatges · Barcelona</span>
-      <p>Especialistes en rutes per Europa. T'ajudem a dissenyar el viatge perfecte adaptat al teu pressupost i estil.</p>
+      <div class="footer-brand-name">Planti i Presi <span>·</span> Cingle</div>
+      <span class="footer-brand-sub">Agència de Viatges · Barcelona</span>
+      <p>Especialistes en rutes per Europa. T'ajudem a dissenyar el viatge perfecte adaptat al teu pressupost i estil de vida.</p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
         <h5>Destinació</h5>
-        <a href="#ciutats">Brussel·les</a>
-        <a href="#ciutats">Bruges</a>
-        <a href="#ciutats">Gant</a>
-        <a href="#ciutats">Anvers</a>
-        <a href="#ciutats">Dinant</a>
-        <a href="#ciutats">Lovaina</a>
+        <a href="#ciutats">Brussel·les</a><a href="#ciutats">Bruges</a>
+        <a href="#ciutats">Gant</a><a href="#ciutats">Anvers</a>
+        <a href="#ciutats">Dinant</a><a href="#ciutats">Lovaina</a>
       </div>
       <div class="footer-col">
         <h5>Plans</h5>
         <a href="#plans">Pla Econòmic (495 €)</a>
         <a href="#plans">Pla Estudiants (650 €)</a>
         <a href="#plans">Pla Complet (1.300 €)</a>
+        <a href="#hotels">Hotels seleccionats</a>
       </div>
       <div class="footer-col">
         <h5>Contacte</h5>
         <a href="mailto:info@plantipresi.com">info@plantipresi.com</a>
         <a href="tel:+34930000000">+34 93 000 0000</a>
         <a href="#">Carrer de Gràcia 42, BCN</a>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
+        <a href="#">Instagram</a><a href="#">Facebook</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Planti & Presi Agència de Viatges · Tots els preus són orientatius i poden variar, aquesta no es una agència real es només per un treball escolar. No es fan compres ni trámits en aquesta página web.</p>
-    <p>Fet amb ♥ a Barcelona</p>
+    <p>© 2025 Planti i Presi Cingle · Tots els preus són orientatius · Aquesta no és una agència real, és un treball escolar. No es fan compres ni tràmits en aquesta pàgina.</p>
+    <p>Fet amb ♥ per <strong style="color:var(--gold)">Nasser</strong> a Barcelona</p>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- MODALS -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ═══════════════ MODALS ═══════════════ -->
 
 <!-- MODAL ECO -->
 <div class="modal-overlay" id="modal-eco">
@@ -512,155 +765,19 @@ nav a:hover::after{width:100%}
     <button class="modal-close" onclick="closeModal('eco')">✕</button>
     <div class="modal-hero">
       <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1040&q=85" alt="Brussel·les">
-      <div class="modal-hero-text">
-        <h2>💰 Pla Econòmic — 7 dies</h2>
-        <p>Brussel·les · Bruges · Gant · Anvers · Pressupost: 495 € / persona</p>
-      </div>
+      <div class="modal-hero-text"><h2>💰 Pla Econòmic — 7 dies</h2><p>Brussel·les · Bruges · Gant · Anvers · Pressupost: 495 € / persona</p></div>
     </div>
     <div class="modal-body">
-      <!-- MAP -->
-      <div class="modal-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d659640.4567!2d3.8!3d50.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e3!4m5!1s0x47c3c481da2a9b65%3A0x6e8e828976da99c0!2sBrussel%C2%B7les!3m2!1d50.8503!2d4.3517!4m5!1s0x47c350d2e5e9c1c5%3A0x3aaefb96af1cc0a5!2sBruges!3m2!1d51.2092!2d3.2246!4m5!1s0x47c370e2e12fcd65%3A0x5be4bef0cac4e3a2!2sGant!3m2!1d51.0543!2d3.7174!5e0!3m2!1sca!2ses!4v1704000000000" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
+      <div class="modal-map"><iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d659640.4567!2d3.8!3d50.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e3!4m5!1s0x47c3c481da2a9b65%3A0x6e8e828976da99c0!2sBrussel%C2%B7les!3m2!1d50.8503!2d4.3517!4m5!1s0x47c350d2e5e9c1c5%3A0x3aaefb96af1cc0a5!2sBruges!3m2!1d51.2092!2d3.2246!4m5!1s0x47c370e2e12fcd65%3A0x5be4bef0cac4e3a2!2sGant!3m2!1d51.0543!2d3.7174!5e0!3m2!1sca!2ses!4v1704000000000" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="day-timeline">
-        <!-- D1-3 -->
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dies 1–3 · Brussel·les</div><div class="day-card-city">🏙️ Capital de Bèlgica</div></div>
-                <div class="day-card-cost-badge" style="background:var(--g1l);color:var(--g1)">≈ 75 € allotj.</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🛏️ <a href="https://www.hostelworld.com/st/hostels/p/317/les-bluets/" target="_blank">Hostel compartit Brussel·les</a> — 25 €/nit × 3 = 75 €</div>
-                <div class="activities-list">
-                  <span class="act-pill free">Grand Place 🆓</span>
-                  <span class="act-pill free">Manneken Pis 🆓</span>
-                  <a class="act-pill link" href="https://www.parlamentarium.eu/ca" target="_blank">Parlamentarium 🆓 ↗</a>
-                  <span class="act-pill free">Parc del Cinquanteni 🆓</span>
-                  <span class="act-pill free">Barri Europeu 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">75 €</span><span class="cl">Allotjament</span></div>
-                  <div class="cost-chip"><span class="cv">60 €</span><span class="cl">Menjars (20€/d)</span></div>
-                  <div class="cost-chip"><span class="cv">0 €</span><span class="cl">Entrades</span></div>
-                  <div class="cost-chip" style="background:#EAF3DE"><span class="cv" style="color:var(--g1)">135 €</span><span class="cl">Total 3 dies</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- D4 -->
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 4 · Bruges</div><div class="day-card-city">🏛️ La Venècia del Nord</div></div>
-                <div class="day-card-cost-badge" style="background:var(--g1l);color:var(--g1)">≈ 62 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🚂 Tren Brussel·les–Bruges: 12–18 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/st/hostels/p/254/snuffel-hostel/" target="_blank">Snuffel Hostel</a> — 30 €</div>
-                <div class="activities-list">
-                  <span class="act-pill free">Centre Històric (UNESCO) 🆓</span>
-                  <span class="act-pill free">Canals (exterior) 🆓</span>
-                  <a class="act-pill link" href="https://www.markt.be/" target="_blank">Plaça Markt 🆓 ↗</a>
-                  <span class="act-pill free">Passeig per Minnewater 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div>
-                  <div class="cost-chip"><span class="cv">15 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:#EAF3DE"><span class="cv" style="color:var(--g1)">65 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- D5 -->
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 5 · Gant</div><div class="day-card-city">⚓ Joiell medieval</div></div>
-                <div class="day-card-cost-badge" style="background:var(--g1l);color:var(--g1)">≈ 58 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🚂 Tren Bruges–Gant: 8–10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Uppelink/Ghent/94040" target="_blank">Hostel Uppelink</a> — 30 €</div>
-                <div class="activities-list">
-                  <span class="act-pill free">Graslei i Korenlei 🆓</span>
-                  <a class="act-pill link" href="https://www.sintbaafskathedraal.be/" target="_blank">Catedral de Sant Bavó ↗</a>
-                  <span class="act-pill free">Patershol (barri medieval) 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div>
-                  <div class="cost-chip"><span class="cv">9 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:#EAF3DE"><span class="cv" style="color:var(--g1)">59 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- D6 -->
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 6 · Anvers</div><div class="day-card-city">💎 Diamants i art flamenc</div></div>
-                <div class="day-card-cost-badge" style="background:var(--g1l);color:var(--g1)">≈ 60 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🚂 Tren Gant–Anvers: 10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/st/hostels/p/31583/m-hostel/" target="_blank">M Hostel Anvers</a> — 30 €</div>
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://www.stationsplein.be/" target="_blank">Estació Central (Palau del Ferrocarril) ↗</a>
-                  <span class="act-pill free">Casc Antic 🆓</span>
-                  <span class="act-pill free">Port d'Anvers 🆓</span>
-                  <span class="act-pill free">Barri dels Diamants 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div>
-                  <div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:#EAF3DE"><span class="cv" style="color:var(--g1)">60 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- D7 -->
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 7 · Tornada</div><div class="day-card-city">✈️ Anvers → Brussel·les → Barcelona</div></div>
-              </div>
-              <div class="day-card-body">
-                <div class="activities-list"><span class="act-pill free">Últimes hores lliures a Brussel·les</span><span class="act-pill free">Vol de tornada</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dies 1–3 · Brussel·les</div><div class="day-card-city">🏙️ Capital de Bèlgica</div></div><div class="day-card-cost-badge" style="background:var(--g1l);color:var(--g1)">≈ 135 € (3 dies)</div></div><div class="day-card-body"><div class="accom-row">🛏️ <a href="https://www.hostelworld.com/st/hostels/p/317/les-bluets/" target="_blank">Hostel compartit Brussel·les</a> — 25 €/nit × 3 = 75 €</div><div class="activities-list"><span class="act-pill free">Grand Place 🆓</span><span class="act-pill free">Manneken Pis 🆓</span><a class="act-pill link" href="https://www.parlamentarium.eu/ca" target="_blank">Parlamentarium 🆓 ↗</a><span class="act-pill free">Parc del Cinquanteni 🆓</span><span class="act-pill free">Barri Europeu 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">75 €</span><span class="cl">Allotjament</span></div><div class="cost-chip"><span class="cv">60 €</span><span class="cl">Menjars 3d</span></div><div class="cost-chip"><span class="cv">0 €</span><span class="cl">Entrades</span></div><div class="cost-chip" style="background:#EAF3DE"><span class="cv" style="color:var(--g1)">135 €</span><span class="cl">Total 3 dies</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 4 · Bruges</div><div class="day-card-city">🏛️ La Venècia del Nord</div></div><div class="day-card-cost-badge" style="background:var(--g1l);color:var(--g1)">≈ 65 € dia</div></div><div class="day-card-body"><div class="accom-row">🚂 Tren 12–18 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/st/hostels/p/254/snuffel-hostel/" target="_blank">Snuffel Hostel</a> — 30 €</div><div class="activities-list"><span class="act-pill free">Centre Històric UNESCO 🆓</span><span class="act-pill free">Canals (exterior) 🆓</span><a class="act-pill link" href="https://www.visitbruges.be/" target="_blank">Plaça Markt 🆓 ↗</a><span class="act-pill free">Passeig Minnewater 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div><div class="cost-chip"><span class="cv">15 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:#EAF3DE"><span class="cv" style="color:var(--g1)">65 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 5 · Gant</div><div class="day-card-city">⚓ Joiell medieval</div></div><div class="day-card-cost-badge" style="background:var(--g1l);color:var(--g1)">≈ 59 € dia</div></div><div class="day-card-body"><div class="accom-row">🚂 Tren 8–10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Uppelink/Ghent/94040" target="_blank">Hostel Uppelink</a> — 30 €</div><div class="activities-list"><span class="act-pill free">Graslei i Korenlei 🆓</span><a class="act-pill link" href="https://www.sintbaafskathedraal.be/" target="_blank">Catedral Sant Bavó ↗</a><span class="act-pill free">Patershol 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div><div class="cost-chip"><span class="cv">9 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:#EAF3DE"><span class="cv" style="color:var(--g1)">59 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 6 · Anvers</div><div class="day-card-city">💎 Diamants i art flamenc</div></div><div class="day-card-cost-badge" style="background:var(--g1l);color:var(--g1)">≈ 60 € dia</div></div><div class="day-card-body"><div class="accom-row">🚂 Tren 10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/st/hostels/p/31583/m-hostel/" target="_blank">M Hostel Anvers</a> — 30 €</div><div class="activities-list"><a class="act-pill link" href="https://www.visitantwerpen.be/" target="_blank">Estació Central ↗</a><span class="act-pill free">Casc Antic 🆓</span><span class="act-pill free">Port d'Anvers 🆓</span><span class="act-pill free">Barri Diamants 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div><div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:#EAF3DE"><span class="cv" style="color:var(--g1)">60 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--g1)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 7 · Tornada</div><div class="day-card-city">✈️ Anvers → Brussel·les → Barcelona</div></div></div><div class="day-card-body"><div class="activities-list"><span class="act-pill free">Últimes hores lliures a Brussel·les</span><span class="act-pill free">Vol de tornada</span></div></div></div></div></div>
       </div>
-
-      <!-- TOTAL -->
-      <div class="total-section">
-        <h3>Resum de despeses — Pla Econòmic</h3>
-        <table class="total-table">
-          <tr><td>✈️ Vol BCN–BRU anada i tornada</td><td>120 €</td></tr>
-          <tr><td>🛏️ Allotjament (6 nits hostel)</td><td>165 €</td></tr>
-          <tr><td>🚂 Trens interurbans</td><td>50 €</td></tr>
-          <tr><td>🍽️ Menjars (≈20 €/dia × 7)</td><td>140 €</td></tr>
-          <tr><td>🎟️ Entrades opcionals</td><td>20 €</td></tr>
-          <tr><td><strong>TOTAL ESTIMAT</strong></td><td><strong>495 €</strong></td></tr>
-        </table>
-      </div>
-      <div style="text-align:center"><a href="mailto:info@plantipresi.com?subject=Reserva Pla Econòmic Bèlgica" class="btn-primary" style="display:inline-flex">✦ Reservar aquest pla</a></div>
+      <div class="total-section"><h3>Resum de despeses — Pla Econòmic</h3><table class="total-table"><tr><td>✈️ Vol BCN–BRU anada i tornada</td><td>120 €</td></tr><tr><td>🛏️ Allotjament (6 nits hostel)</td><td>165 €</td></tr><tr><td>🚂 Trens interurbans</td><td>50 €</td></tr><tr><td>🍽️ Menjars (≈20 €/dia × 7)</td><td>140 €</td></tr><tr><td>🎟️ Entrades opcionals</td><td>20 €</td></tr><tr><td><strong>TOTAL ESTIMAT</strong></td><td><strong>495 €</strong></td></tr></table></div>
+      <div style="text-align:center"><a href="mailto:info@plantipresi.com?subject=Reserva Pla Econòmic" class="btn-primary" style="display:inline-flex">✦ Reservar aquest pla</a></div>
     </div>
   </div>
 </div>
@@ -671,168 +788,20 @@ nav a:hover::after{width:100%}
     <button class="modal-close" onclick="closeModal('est')">✕</button>
     <div class="modal-hero">
       <img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=1040&q=85" alt="Bruges">
-      <div class="modal-hero-text">
-        <h2>🎓 Pla Estudiants — 7 dies</h2>
-        <p>Brussel·les · Bruges · Gant · Anvers · Lovaina · Pressupost: 650–700 € / persona</p>
-      </div>
+      <div class="modal-hero-text"><h2>🎓 Pla Estudiants — 7 dies</h2><p>Brussel·les · Bruges · Gant · Anvers · Lovaina · Pressupost: 650–700 € / persona</p></div>
     </div>
     <div class="modal-body">
-      <div class="modal-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d850000!2d4.1!3d50.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e3!4m5!1s0x47c3c481da2a9b65%3A0x6e8e828976da99c0!2sBrussel%C2%B7les!3m2!1d50.8503!2d4.3517!4m5!1s0x47c350d2e5e9c1c5%3A0x3aaefb96af1cc0a5!2sBruges!3m2!1d51.2092!2d3.2246!4m5!1s0x47c370e2e12fcd65%3A0x5be4bef0cac4e3a2!2sGant!3m2!1d51.0543!2d3.7174!4m5!1s0x47c3f41c94e60c25%3A0xbcf8c51e75d56a21!2sAnvers!3m2!1d51.2213!2d4.4051!4m5!1s0x47c160d93c618483%3A0x4e6012dda2aa68e5!2sLovaina!3m2!1d50.8798!2d4.7005!5e0!3m2!1sca!2ses!4v1704000000001" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <div class="modal-map"><iframe src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d850000!2d4.1!3d50.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e3!4m5!1s0x47c3c481da2a9b65%3A0x6e8e828976da99c0!2sBrussel%C2%B7les!3m2!1d50.8503!2d4.3517!4m5!1s0x47c350d2e5e9c1c5%3A0x3aaefb96af1cc0a5!2sBruges!3m2!1d51.2092!2d3.2246!4m5!1s0x47c370e2e12fcd65%3A0x5be4bef0cac4e3a2!2sGant!3m2!1d51.0543!2d3.7174!4m5!1s0x47c3f41c94e60c25%3A0xbcf8c51e75d56a21!2sAnvers!3m2!1d51.2213!2d4.4051!4m5!1s0x47c160d93c618483%3A0x4e6012dda2aa68e5!2sLovaina!3m2!1d50.8798!2d4.7005!5e0!3m2!1sca!2ses!4v1704000000001" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="day-timeline">
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dies 1–2 · Brussel·les</div><div class="day-card-city">🏙️ Capital europea</div></div>
-                <div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 109 € (2 dies)</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🛏️ <a href="https://www.meininger-hotels.com/ca/hotels/brussels/" target="_blank">MEININGER Hotel Brussel·les</a> — 30 €/nit (compartit)</div>
-                <div class="activities-list">
-                  <span class="act-pill free">Grand Place 🆓</span>
-                  <a class="act-pill link" href="https://www.europarl.europa.eu/visiting/ca/" target="_blank">Parlament Europeu 🆓 ↗</a>
-                  <a class="act-pill link" href="https://www.atomium.be/ca" target="_blank">Atomium (estud.) 9 € ↗</a>
-                  <a class="act-pill link" href="https://www.fine-arts-museum.be/ca" target="_blank">Museus Reials Belles Arts ↗</a>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">60 €</span><span class="cl">2 nits hostel</span></div>
-                  <div class="cost-chip"><span class="cv">9 €</span><span class="cl">Atomium</span></div>
-                  <div class="cost-chip"><span class="cv">40 €</span><span class="cl">Menjars 2 d.</span></div>
-                  <div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">109 €</span><span class="cl">Total 2 dies</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 3 · Bruges</div><div class="day-card-city">🏛️ Canals i campanars</div></div>
-                <div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 91 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🚂 Tren 12–18 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/st/hostels/p/254/snuffel-hostel/" target="_blank">Snuffel Hostel Bruges</a> — 30 €</div>
-                <div class="activities-list">
-                  <span class="act-pill free">Free Tour Històric 🆓</span>
-                  <a class="act-pill link" href="https://www.visitbruges.be/ca/passeig-en-vaixell" target="_blank">Passeig en vaixell 15 € ↗</a>
-                  <a class="act-pill link" href="https://www.brontower.be/" target="_blank">Campanar de Bruges 16 € ↗</a>
-                  <a class="act-pill link" href="https://www.choco-story.be/ca" target="_blank">Museu de la Xocolata ↗</a>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div>
-                  <div class="cost-chip"><span class="cv">15 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">31 €</span><span class="cl">Entrades</span></div>
-                  <div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">96 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 4 · Gant</div><div class="day-card-city">⚓ Castell i catedrals</div></div>
-                <div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 72 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🚂 Tren Bruges–Gant: 8–10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Uppelink/Ghent/94040" target="_blank">Uppelink Hostel</a> — 30 €</div>
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://historischehuizen.gent.be/ca/gravensteen" target="_blank">Castell dels Comtes 13 € ↗</a>
-                  <a class="act-pill link" href="https://www.sintbaafskathedraal.be/" target="_blank">Catedral de Sant Bavó ↗</a>
-                  <span class="act-pill free">Ambient universitari 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div>
-                  <div class="cost-chip"><span class="cv">9 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">13 €</span><span class="cl">Entrades</span></div>
-                  <div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">72 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 5 · Anvers</div><div class="day-card-city">💎 Museus i diamants</div></div>
-                <div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 72 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🚂 Tren Gant–Anvers: 10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/st/hostels/p/31583/m-hostel/" target="_blank">M Hostel Anvers</a> — 30 €</div>
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://www.mas.be/ca" target="_blank">Museu MAS (estud.) 12 € ↗</a>
-                  <span class="act-pill free">Barri dels Diamants 🆓</span>
-                  <span class="act-pill free">Casc Antic 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div>
-                  <div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">12 €</span><span class="cl">MAS</span></div>
-                  <div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">72 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 6 · Lovaina</div><div class="day-card-city">🎓 La universitat més famosa de Bèlgica</div></div>
-                <div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 55 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🚂 Tren Anvers–Lovaina: 10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hotelvandervalk.be/ca/lovaina" target="_blank">Hostel Lovaina</a> — 30 €</div>
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://www.kuleuven.be/ca" target="_blank">KU Leuven — Universitat ↗</a>
-                  <a class="act-pill link" href="https://www.leuven.be/stadhuis" target="_blank">Ajuntament Gòtic (gratis) 🆓 ↗</a>
-                  <span class="act-pill free">Biblioteca Universitària 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div>
-                  <div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">60 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header"><div><div class="day-card-title">Dia 7 · Tornada</div><div class="day-card-city">✈️ Brussel·les → Barcelona</div></div></div>
-              <div class="day-card-body"><div class="activities-list"><span class="act-pill free">Últimes compres · Vol de tornada</span></div></div>
-            </div>
-          </div>
-        </div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dies 1–2 · Brussel·les</div><div class="day-card-city">🏙️ Capital europea</div></div><div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 109 € (2 dies)</div></div><div class="day-card-body"><div class="accom-row">🛏️ <a href="https://www.meininger-hotels.com/en/hotels/brussels/" target="_blank">MEININGER Hotel Brussel·les</a> — 30 €/nit</div><div class="activities-list"><span class="act-pill free">Grand Place 🆓</span><a class="act-pill link" href="https://www.europarl.europa.eu/visiting/ca/" target="_blank">Parlament Europeu 🆓 ↗</a><a class="act-pill link" href="https://www.atomium.be/ca" target="_blank">Atomium (estud.) 9 € ↗</a><a class="act-pill link" href="https://www.fine-arts-museum.be/ca" target="_blank">Museus Belles Arts ↗</a></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">60 €</span><span class="cl">2 nits hostel</span></div><div class="cost-chip"><span class="cv">9 €</span><span class="cl">Atomium</span></div><div class="cost-chip"><span class="cv">40 €</span><span class="cl">Menjars 2d</span></div><div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">109 €</span><span class="cl">Total 2 dies</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 3 · Bruges</div><div class="day-card-city">🏛️ Canals i campanars</div></div><div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 96 € dia</div></div><div class="day-card-body"><div class="accom-row">🚂 Tren 12–18 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/st/hostels/p/254/snuffel-hostel/" target="_blank">Snuffel Hostel</a> — 30 €</div><div class="activities-list"><span class="act-pill free">Free Tour Històric 🆓</span><a class="act-pill link" href="https://www.visitbruges.be/ca" target="_blank">Passeig en vaixell 15 € ↗</a><a class="act-pill link" href="https://www.brontower.be/" target="_blank">Campanar 16 € ↗</a><a class="act-pill link" href="https://www.choco-story.be/ca" target="_blank">Museu Xocolata ↗</a></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div><div class="cost-chip"><span class="cv">15 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">31 €</span><span class="cl">Entrades</span></div><div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">96 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 4 · Gant</div><div class="day-card-city">⚓ Castell i catedrals</div></div><div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 72 € dia</div></div><div class="day-card-body"><div class="accom-row">🚂 Tren 8–10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Uppelink/Ghent/94040" target="_blank">Uppelink Hostel</a> — 30 €</div><div class="activities-list"><a class="act-pill link" href="https://historischehuizen.gent.be/ca/gravensteen" target="_blank">Castell dels Comtes 13 € ↗</a><a class="act-pill link" href="https://www.sintbaafskathedraal.be/" target="_blank">Catedral Sant Bavó ↗</a><span class="act-pill free">Ambient universitari 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div><div class="cost-chip"><span class="cv">9 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">13 €</span><span class="cl">Entrades</span></div><div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">72 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 5 · Anvers</div><div class="day-card-city">💎 Museus i diamants</div></div><div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 72 € dia</div></div><div class="day-card-body"><div class="accom-row">🚂 Tren 10 € &nbsp;|&nbsp; 🛏️ <a href="https://www.hostelworld.com/st/hostels/p/31583/m-hostel/" target="_blank">M Hostel Anvers</a> — 30 €</div><div class="activities-list"><a class="act-pill link" href="https://www.mas.be/ca" target="_blank">Museu MAS (estud.) 12 € ↗</a><span class="act-pill free">Barri Diamants 🆓</span><span class="act-pill free">Casc Antic 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div><div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">12 €</span><span class="cl">MAS</span></div><div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">72 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 6 · Lovaina</div><div class="day-card-city">🎓 Universitat més famosa de Bèlgica</div></div><div class="day-card-cost-badge" style="background:var(--b2l);color:var(--b2)">≈ 60 € dia</div></div><div class="day-card-body"><div class="accom-row">🚂 Tren 10 € &nbsp;|&nbsp; 🛏️ Hostel Lovaina — 30 €</div><div class="activities-list"><a class="act-pill link" href="https://www.kuleuven.be/ca" target="_blank">KU Leuven ↗</a><a class="act-pill link" href="https://www.leuven.be/stadhuis" target="_blank">Ajuntament Gòtic 🆓 ↗</a><span class="act-pill free">Biblioteca Universitària 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">30 €</span><span class="cl">Hostel</span></div><div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">20 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:var(--b2l)"><span class="cv" style="color:var(--b2)">60 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--b2)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 7 · Tornada</div><div class="day-card-city">✈️ Brussel·les → Barcelona</div></div></div><div class="day-card-body"><div class="activities-list"><span class="act-pill free">Últimes compres · Vol de tornada</span></div></div></div></div></div>
       </div>
-      <div class="total-section">
-        <h3>Resum de despeses — Pla Estudiants</h3>
-        <table class="total-table">
-          <tr><td>✈️ Vol BCN–BRU anada i tornada</td><td>120 €</td></tr>
-          <tr><td>🛏️ Allotjament (6 nits hostel)</td><td>210 €</td></tr>
-          <tr><td>🚂 Transport interurbà</td><td>70 €</td></tr>
-          <tr><td>🍽️ Menjars</td><td>170 €</td></tr>
-          <tr><td>🎟️ Entrades (amb descomptes)</td><td>80 €</td></tr>
-          <tr><td><strong>TOTAL ESTIMAT</strong></td><td><strong>650–700 €</strong></td></tr>
-        </table>
-      </div>
-      <div style="text-align:center"><a href="mailto:info@plantipresi.com?subject=Reserva Pla Estudiants Bèlgica" class="btn-primary" style="display:inline-flex;background:var(--b2);color:#fff">✦ Reservar aquest pla</a></div>
+      <div class="total-section"><h3>Resum de despeses — Pla Estudiants</h3><table class="total-table"><tr><td>✈️ Vol BCN–BRU anada i tornada</td><td>120 €</td></tr><tr><td>🛏️ Allotjament (6 nits hostel)</td><td>210 €</td></tr><tr><td>🚂 Transport interurbà</td><td>70 €</td></tr><tr><td>🍽️ Menjars</td><td>170 €</td></tr><tr><td>🎟️ Entrades (amb descomptes)</td><td>80 €</td></tr><tr><td><strong>TOTAL ESTIMAT</strong></td><td><strong>650–700 €</strong></td></tr></table></div>
+      <div style="text-align:center"><a href="mailto:info@plantipresi.com?subject=Reserva Pla Estudiants" class="btn-primary" style="display:inline-flex;background:var(--b2);color:#fff">✦ Reservar aquest pla</a></div>
     </div>
   </div>
 </div>
@@ -843,317 +812,53 @@ nav a:hover::after{width:100%}
     <button class="modal-close" onclick="closeModal('cmp')">✕</button>
     <div class="modal-hero">
       <img src="https://images.unsplash.com/photo-1520106212299-d99c443e4568?w=1040&q=85" alt="Dinant">
-      <div class="modal-hero-text">
-        <h2>⭐ Pla Complet i Turístic — 7 dies</h2>
-        <p>Brussel·les · Bruges · Gant · Anvers · Dinant · Lovaina · Pressupost: 1.300 € / persona</p>
-      </div>
+      <div class="modal-hero-text"><h2>⭐ Pla Complet i Turístic — 7 dies</h2><p>Brussel·les · Bruges · Gant · Anvers · Dinant · Lovaina · 1.300 € / persona</p></div>
     </div>
     <div class="modal-body">
-      <div class="modal-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d1400000!2d4.2!3d50.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e3!4m5!1s0x47c3c481da2a9b65%3A0x6e8e828976da99c0!2sBrussel%C2%B7les!3m2!1d50.8503!2d4.3517!4m5!1s0x47c350d2e5e9c1c5%3A0x3aaefb96af1cc0a5!2sBruges!3m2!1d51.2092!2d3.2246!4m5!1s0x47c370e2e12fcd65%3A0x5be4bef0cac4e3a2!2sGant!3m2!1d51.0543!2d3.7174!4m5!1s0x47c3f41c94e60c25%3A0xbcf8c51e75d56a21!2sAnvers!3m2!1d51.2213!2d4.4051!4m5!1s0x47ea6fb3f3780be5%3A0x2c95a5a8aa42f1c4!2sDinant!3m2!1d50.2606!2d4.9124!4m5!1s0x47c160d93c618483%3A0x4e6012dda2aa68e5!2sLovaina!3m2!1d50.8798!2d4.7005!5e0!3m2!1sca!2ses!4v1704000000002" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <div class="modal-map"><iframe src="https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d1400000!2d4.2!3d50.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e3!4m5!1s0x47c3c481da2a9b65%3A0x6e8e828976da99c0!2sBrussel%C2%B7les!3m2!1d50.8503!2d4.3517!4m5!1s0x47c350d2e5e9c1c5%3A0x3aaefb96af1cc0a5!2sBruges!3m2!1d51.2092!2d3.2246!4m5!1s0x47c370e2e12fcd65%3A0x5be4bef0cac4e3a2!2sGant!3m2!1d51.0543!2d3.7174!4m5!1s0x47c3f41c94e60c25%3A0xbcf8c51e75d56a21!2sAnvers!3m2!1d51.2213!2d4.4051!4m5!1s0x47ea6fb3f3780be5%3A0x2c95a5a8aa42f1c4!2sDinant!3m2!1d50.2606!2d4.9124!4m5!1s0x47c160d93c618483%3A0x4e6012dda2aa68e5!2sLovaina!3m2!1d50.8798!2d4.7005!5e0!3m2!1sca!2ses!4v1704000000002" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       <div class="day-timeline">
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dies 1–2 · Brussel·les</div><div class="day-card-city">🏙️ Hotel 3★ · Experiència completa</div></div>
-                <div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 237 € (2 dies)</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🏨 <a href="https://www.hotelbluebells.be/" target="_blank">Hotel Amigo Brussels 3★</a> — 90 €/nit</div>
-                <div class="activities-list">
-                  <span class="act-pill free">Grand-Place 🆓</span>
-                  <a class="act-pill link" href="https://www.atomium.be/ca" target="_blank">Atomium 17 € ↗</a>
-                  <a class="act-pill link" href="https://www.laeken.be/ca" target="_blank">Palau Reial de Brussel·les ↗</a>
-                  <a class="act-pill link" href="https://www.parliamentarium.eu/ca" target="_blank">Parlamentarium 🆓 ↗</a>
-                  <a class="act-pill link" href="https://www.saint-hubert.be/" target="_blank">Galeries Saint Hubert ↗</a>
-                  <span class="act-pill free">Barri del Sablon 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">180 €</span><span class="cl">2 nits hotel</span></div>
-                  <div class="cost-chip"><span class="cv">17 €</span><span class="cl">Atomium</span></div>
-                  <div class="cost-chip"><span class="cv">70 €</span><span class="cl">Menjars 2 dies</span></div>
-                  <div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">267 €</span><span class="cl">Total 2 dies</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 3 · Bruges</div><div class="day-card-city">🏛️ Hotel cèntric · La Venècia del Nord</div></div>
-                <div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 186 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🏨 <a href="https://www.hotelde-orangerie.com/" target="_blank">Hotel De Orangerie Bruges</a> — 110 €</div>
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://www.visitbruges.be/ca/passeig-en-vaixell" target="_blank">Passeig en vaixell pels canals ↗</a>
-                  <a class="act-pill link" href="https://www.brontower.be/" target="_blank">Campanar de Bruges ↗</a>
-                  <a class="act-pill link" href="https://www.choco-story.be/ca" target="_blank">Museu de la Xocolata ↗</a>
-                  <a class="act-pill link" href="https://www.halvemaan.be/ca" target="_blank">Cerveceria Halve Maan ↗</a>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">110 €</span><span class="cl">Hotel</span></div>
-                  <div class="cost-chip"><span class="cv">15 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">36 €</span><span class="cl">Entrades</span></div>
-                  <div class="cost-chip"><span class="cv">35 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">196 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 4 · Gant</div><div class="day-card-city">⚓ Hotel · Creuer urbà</div></div>
-                <div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 175 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🏨 <a href="https://www.hotelpharmond.be/" target="_blank">Hotel Harmony Gant</a> — 100 €</div>
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://historischehuizen.gent.be/ca/gravensteen" target="_blank">Castell dels Comtes ↗</a>
-                  <a class="act-pill link" href="https://www.sintbaafskathedraal.be/" target="_blank">Catedral de Sant Bavó ↗</a>
-                  <a class="act-pill link" href="https://www.visitgent.be/ca/belfort" target="_blank">Campanar de Gant ↗</a>
-                  <a class="act-pill link" href="https://www.debootsgent.be/" target="_blank">Creuer urbà fluvial ↗</a>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">100 €</span><span class="cl">Hotel</span></div>
-                  <div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">40 €</span><span class="cl">Entrades</span></div>
-                  <div class="cost-chip"><span class="cv">35 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">185 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 5 · Anvers</div><div class="day-card-city">💎 Hotel · Museus i port</div></div>
-                <div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 175 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🏨 <a href="https://www.hotelbutler.be/" target="_blank">Hotel Butler Anvers 3★</a> — 110 €</div>
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://www.mas.be/ca" target="_blank">Museu MAS ↗</a>
-                  <a class="act-pill link" href="https://www.dekathedraal.be/ca" target="_blank">Catedral de la Mare de Déu ↗</a>
-                  <span class="act-pill free">Barri dels Diamants 🆓</span>
-                  <span class="act-pill free">Port Històric 🆓</span>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">110 €</span><span class="cl">Hotel</span></div>
-                  <div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div>
-                  <div class="cost-chip"><span class="cv">30 €</span><span class="cl">Entrades</span></div>
-                  <div class="cost-chip"><span class="cv">35 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">185 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 6 · Dinant</div><div class="day-card-city">🏔️ Ciutadella i riu Mosa</div></div>
-                <div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 180 € dia</div>
-              </div>
-              <div class="day-card-body">
-                <div class="accom-row">🏨 <a href="https://www.hotel-dinant.be/" target="_blank">Hotel de la Meuse Dinant</a> — 100 €</div>
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://www.citadellededinant.be/" target="_blank">Ciutadella de Dinant ↗</a>
-                  <span class="act-pill free">Col·legiata Notre-Dame 🆓</span>
-                  <span class="act-pill free">Passeig pel Riu Mosa 🆓</span>
-                  <a class="act-pill link" href="https://www.dinant-tourisme.be/ca/activitats/telecabina" target="_blank">Telecabina panoràmica ↗</a>
-                </div>
-                <div class="day-cost-summary">
-                  <div class="cost-chip"><span class="cv">100 €</span><span class="cl">Hotel</span></div>
-                  <div class="cost-chip"><span class="cv">20 €</span><span class="cl">Transport</span></div>
-                  <div class="cost-chip"><span class="cv">25 €</span><span class="cl">Entrades</span></div>
-                  <div class="cost-chip"><span class="cv">35 €</span><span class="cl">Menjars</span></div>
-                  <div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">180 €</span><span class="cl">Total dia</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-item">
-          <div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div>
-          <div class="day-content-box">
-            <div class="day-card-inner">
-              <div class="day-card-header">
-                <div><div class="day-card-title">Dia 7 · Lovaina + Tornada</div><div class="day-card-city">🎓 ✈️ Brussel·les → Barcelona</div></div>
-              </div>
-              <div class="day-card-body">
-                <div class="activities-list">
-                  <a class="act-pill link" href="https://www.leuven.be/stadhuis" target="_blank">Ajuntament Gòtic ↗</a>
-                  <a class="act-pill link" href="https://www.kuleuven.be/ca" target="_blank">Biblioteca Universitària ↗</a>
-                  <span class="act-pill free">Últimes compres i tornada</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dies 1–2 · Brussel·les</div><div class="day-card-city">🏙️ Hotel 3★ · Experiència completa</div></div><div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 267 € (2 dies)</div></div><div class="day-card-body"><div class="accom-row">🏨 <a href="https://www.roccofortehotels.com/hotels-and-resorts/hotel-amigo/" target="_blank">Hotel Amigo Brussels 5★</a> — 90–130 €/nit</div><div class="activities-list"><span class="act-pill free">Grand-Place 🆓</span><a class="act-pill link" href="https://www.atomium.be/ca" target="_blank">Atomium 17 € ↗</a><a class="act-pill link" href="https://www.monarchie.be/ca" target="_blank">Palau Reial ↗</a><a class="act-pill link" href="https://www.parlamentarium.eu/ca" target="_blank">Parlamentarium 🆓 ↗</a><a class="act-pill link" href="https://www.grsl.be/" target="_blank">Galeries Saint Hubert ↗</a><span class="act-pill free">Barri del Sablon 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">180 €</span><span class="cl">2 nits hotel</span></div><div class="cost-chip"><span class="cv">17 €</span><span class="cl">Atomium</span></div><div class="cost-chip"><span class="cv">70 €</span><span class="cl">Menjars 2d</span></div><div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">267 €</span><span class="cl">Total 2 dies</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 3 · Bruges</div><div class="day-card-city">🏛️ Hotel de luxe · Venècia del Nord</div></div><div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 196 € dia</div></div><div class="day-card-body"><div class="accom-row">🏨 <a href="https://www.hotelorangerie.be/" target="_blank">Hotel De Orangerie Bruges 4★</a> — 110–150 €</div><div class="activities-list"><a class="act-pill link" href="https://www.visitbruges.be/ca" target="_blank">Passeig en vaixell ↗</a><a class="act-pill link" href="https://www.brontower.be/" target="_blank">Campanar ↗</a><a class="act-pill link" href="https://www.choco-story.be/ca" target="_blank">Museu Xocolata ↗</a><a class="act-pill link" href="https://www.halvemaan.be/" target="_blank">Cerveceria Halve Maan ↗</a></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">110 €</span><span class="cl">Hotel</span></div><div class="cost-chip"><span class="cv">15 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">36 €</span><span class="cl">Entrades</span></div><div class="cost-chip"><span class="cv">35 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">196 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 4 · Gant</div><div class="day-card-city">⚓ Hotel · Creuer urbà</div></div><div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 185 € dia</div></div><div class="day-card-body"><div class="accom-row">🏨 <a href="https://www.hotel-harmony.be/" target="_blank">Hotel Harmony Gant 4★</a> — 100 €</div><div class="activities-list"><a class="act-pill link" href="https://historischehuizen.gent.be/ca/gravensteen" target="_blank">Castell dels Comtes ↗</a><a class="act-pill link" href="https://www.sintbaafskathedraal.be/" target="_blank">Catedral Sant Bavó ↗</a><a class="act-pill link" href="https://www.visitgent.be/ca/belfort" target="_blank">Campanar de Gant ↗</a><a class="act-pill link" href="https://www.debootsgent.be/" target="_blank">Creuer urbà ↗</a></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">100 €</span><span class="cl">Hotel</span></div><div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">40 €</span><span class="cl">Entrades</span></div><div class="cost-chip"><span class="cv">35 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">185 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 5 · Anvers</div><div class="day-card-city">💎 Hotel · Museus i port</div></div><div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 185 € dia</div></div><div class="day-card-body"><div class="accom-row">🏨 Hotel Butler Anvers 3★ — 110 €</div><div class="activities-list"><a class="act-pill link" href="https://www.mas.be/ca" target="_blank">Museu MAS ↗</a><a class="act-pill link" href="https://www.dekathedraal.be/ca" target="_blank">Catedral Mare de Déu ↗</a><span class="act-pill free">Barri Diamants 🆓</span><span class="act-pill free">Port Històric 🆓</span></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">110 €</span><span class="cl">Hotel</span></div><div class="cost-chip"><span class="cv">10 €</span><span class="cl">Tren</span></div><div class="cost-chip"><span class="cv">30 €</span><span class="cl">Entrades</span></div><div class="cost-chip"><span class="cv">35 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">185 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 6 · Dinant</div><div class="day-card-city">🏔️ Ciutadella i riu Mosa</div></div><div class="day-card-cost-badge" style="background:var(--o3l);color:var(--o3)">≈ 180 € dia</div></div><div class="day-card-body"><div class="accom-row">🏨 Hotel de la Meuse Dinant — 100 €</div><div class="activities-list"><a class="act-pill link" href="https://www.citadellededinant.be/" target="_blank">Ciutadella de Dinant ↗</a><span class="act-pill free">Col·legiata Notre-Dame 🆓</span><span class="act-pill free">Passeig Riu Mosa 🆓</span><a class="act-pill link" href="https://www.dinant-tourisme.be/" target="_blank">Telecabina panoràmica ↗</a></div><div class="day-cost-summary"><div class="cost-chip"><span class="cv">100 €</span><span class="cl">Hotel</span></div><div class="cost-chip"><span class="cv">20 €</span><span class="cl">Transport</span></div><div class="cost-chip"><span class="cv">25 €</span><span class="cl">Entrades</span></div><div class="cost-chip"><span class="cv">35 €</span><span class="cl">Menjars</span></div><div class="cost-chip" style="background:var(--o3l)"><span class="cv" style="color:var(--o3)">180 €</span><span class="cl">Total dia</span></div></div></div></div></div></div>
+        <div class="day-item"><div class="day-dot"><div class="day-dot-circle" style="color:var(--o3)"></div></div><div class="day-content-box"><div class="day-card-inner"><div class="day-card-header"><div><div class="day-card-title">Dia 7 · Lovaina + Tornada</div><div class="day-card-city">🎓 ✈️ Brussel·les → Barcelona</div></div></div><div class="day-card-body"><div class="activities-list"><a class="act-pill link" href="https://www.leuven.be/stadhuis" target="_blank">Ajuntament Gòtic ↗</a><a class="act-pill link" href="https://www.kuleuven.be/ca" target="_blank">Biblioteca Universitària ↗</a><span class="act-pill free">Últimes compres i tornada</span></div></div></div></div></div>
       </div>
-      <div class="total-section">
-        <h3>Resum de despeses — Pla Complet</h3>
-        <table class="total-table">
-          <tr><td>✈️ Vol BCN–BRU anada i tornada</td><td>120 €</td></tr>
-          <tr><td>🏨 Hotels 3★ (6 nits)</td><td>600 €</td></tr>
-          <tr><td>🚂 Transport</td><td>90 €</td></tr>
-          <tr><td>🍽️ Menjars (restaurants)</td><td>250 €</td></tr>
-          <tr><td>🎟️ Entrades i activitats</td><td>140 €</td></tr>
-          <tr><td>🛍️ Extres i compres</td><td>100 €</td></tr>
-          <tr><td><strong>TOTAL ESTIMAT</strong></td><td><strong>1.300 €</strong></td></tr>
-        </table>
-      </div>
-      <div style="text-align:center"><a href="mailto:info@plantipresi.com?subject=Reserva Pla Complet Bèlgica" class="btn-primary" style="display:inline-flex;background:var(--o3);color:#fff">✦ Reservar aquest pla</a></div>
+      <div class="total-section"><h3>Resum de despeses — Pla Complet</h3><table class="total-table"><tr><td>✈️ Vol BCN–BRU anada i tornada</td><td>120 €</td></tr><tr><td>🏨 Hotels 3–5★ (6 nits)</td><td>600 €</td></tr><tr><td>🚂 Transport</td><td>90 €</td></tr><tr><td>🍽️ Menjars (restaurants)</td><td>250 €</td></tr><tr><td>🎟️ Entrades i activitats</td><td>140 €</td></tr><tr><td>🛍️ Extres i compres</td><td>100 €</td></tr><tr><td><strong>TOTAL ESTIMAT</strong></td><td><strong>1.300 €</strong></td></tr></table></div>
+      <div style="text-align:center"><a href="mailto:info@plantipresi.com?subject=Reserva Pla Complet" class="btn-primary" style="display:inline-flex;background:var(--o3);color:#fff">✦ Reservar aquest pla</a></div>
     </div>
   </div>
 </div>
 
 <script>
-// ── CURSOR + GRAVITY ──
-const dot = document.getElementById('cursor-dot');
-const ring = document.getElementById('cursor-ring');
-const glow = document.getElementById('cursor-glow');
-const canvas = document.getElementById('particles-canvas');
-const ctx = canvas.getContext('2d');
-let mx = -999, my = -999;
-let ringX = -999, ringY = -999;
-let glowX = -999, glowY = -999;
-let particles = [];
-
+// ── CURSOR ──
+const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring'),glow=document.getElementById('cursor-glow');
+const canvas=document.getElementById('particles-canvas'),ctx=canvas.getContext('2d');
+let mx=-999,my=-999,rx=-999,ry=-999,gx=-999,gy=-999,particles=[];
 function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
-resizeCanvas();
-window.addEventListener('resize',resizeCanvas);
+resizeCanvas();window.addEventListener('resize',resizeCanvas);
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+(function animC(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';gx+=(mx-gx)*.06;gy+=(my-gy)*.06;glow.style.left=gx+'px';glow.style.top=gy+'px';requestAnimationFrame(animC)})();
+document.querySelectorAll('a,button,.plan-select-card,.city-card,.hotel-card').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'))});
 
-document.addEventListener('mousemove',e=>{
-  mx=e.clientX;my=e.clientY;
-  dot.style.left=mx+'px';dot.style.top=my+'px';
-});
+// ── PARTICLES ──
+class P{constructor(){this.reset()}reset(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.vx=(Math.random()-.5)*.4;this.vy=(Math.random()-.5)*.4;this.s=Math.random()*2+.5;this.a=Math.random()*.35+.05;this.c=Math.random()<.6?'201,168,76':'255,255,255'}update(){const dx=mx-this.x,dy=my-this.y,d=Math.sqrt(dx*dx+dy*dy);if(d<220){const f=(220-d)/220*.6;this.vx+=dx/d*f;this.vy+=dy/d*f}this.vx*=.972;this.vy*=.972;this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width||this.y<0||this.y>canvas.height)this.reset()}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.s,0,Math.PI*2);ctx.fillStyle=`rgba(${this.c},${this.a})`;ctx.fill()}}
+for(let i=0;i<90;i++)particles.push(new P());
+(function animP(){ctx.clearRect(0,0,canvas.width,canvas.height);for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<110){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(201,168,76,${(1-d/110)*.07})`;ctx.lineWidth=.5;ctx.stroke()}}}particles.forEach(p=>{p.update();p.draw()});requestAnimationFrame(animP)})();
 
-// Smooth ring follow
-function animateCursor(){
-  ringX+=(mx-ringX)*0.14;
-  ringY+=(my-ringY)*0.14;
-  ring.style.left=ringX+'px';ring.style.top=ringY+'px';
-  glowX+=(mx-glowX)*0.07;
-  glowY+=(my-glowY)*0.07;
-  glow.style.left=glowX+'px';glow.style.top=glowY+'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-document.querySelectorAll('a,button,.plan-select-card,.city-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));
-  el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'));
-});
-
-// ── GRAVITY PARTICLES ──
-class Particle{
-  constructor(){this.reset()}
-  reset(){
-    this.x=Math.random()*canvas.width;
-    this.y=Math.random()*canvas.height;
-    this.vx=(Math.random()-0.5)*0.4;
-    this.vy=(Math.random()-0.5)*0.4;
-    this.size=Math.random()*2+0.5;
-    this.alpha=Math.random()*0.4+0.05;
-    this.color=Math.random()<0.6?'201,168,76':'255,255,255';
-  }
-  update(){
-    const dx=mx-this.x;const dy=my-this.y;
-    const dist=Math.sqrt(dx*dx+dy*dy);
-    if(dist<200){
-      const force=(200-dist)/200*0.5;
-      this.vx+=dx/dist*force;
-      this.vy+=dy/dist*force;
-    }
-    this.vx*=0.97;this.vy*=0.97;
-    this.x+=this.vx;this.y+=this.vy;
-    if(this.x<0||this.x>canvas.width||this.y<0||this.y>canvas.height)this.reset();
-  }
-  draw(){
-    ctx.beginPath();
-    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-    ctx.fillStyle=`rgba(${this.color},${this.alpha})`;
-    ctx.fill();
-  }
-}
-
-for(let i=0;i<80;i++)particles.push(new Particle());
-
-function animateParticles(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  // Draw connections
-  for(let i=0;i<particles.length;i++){
-    for(let j=i+1;j<particles.length;j++){
-      const dx=particles[i].x-particles[j].x;
-      const dy=particles[i].y-particles[j].y;
-      const d=Math.sqrt(dx*dx+dy*dy);
-      if(d<100){
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x,particles[i].y);
-        ctx.lineTo(particles[j].x,particles[j].y);
-        ctx.strokeStyle=`rgba(201,168,76,${(1-d/100)*0.08})`;
-        ctx.lineWidth=0.5;
-        ctx.stroke();
-      }
-    }
-  }
-  particles.forEach(p=>{p.update();p.draw()});
-  requestAnimationFrame(animateParticles);
-}
-animateParticles();
-
-// ── HERO PARALLAX ──
+// ── PARALLAX ──
 const heroBg=document.getElementById('heroBg');
-window.addEventListener('scroll',()=>{
-  const s=window.scrollY;
-  if(heroBg)heroBg.style.transform=`scale(1.05) translateY(${s*0.3}px)`;
-  document.querySelectorAll('.parallax-bg').forEach(el=>{
-    const rect=el.closest('.parallax-section').getBoundingClientRect();
-    el.style.transform=`translateY(${-rect.top*0.25}px)`;
-  });
-});
+window.addEventListener('scroll',()=>{const s=window.scrollY;if(heroBg)heroBg.style.transform=`scale(1.06) translateY(${s*.28}px)`;document.querySelectorAll('.parallax-bg').forEach(el=>{const r=el.closest('.parallax-section').getBoundingClientRect();el.style.transform=`translateY(${-r.top*.22}px)`})});
 
-// ── MODAL ──
-function openModal(id){
-  document.getElementById('modal-'+id).classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeModal(id){
-  document.getElementById('modal-'+id).classList.remove('open');
-  document.body.style.overflow='';
-}
-document.querySelectorAll('.modal-overlay').forEach(m=>{
-  m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open'),document.body.style.overflow=''});
-});
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>{m.classList.remove('open');document.body.style.overflow=''});
-});
+// ── MODALS ──
+function openModal(id){document.getElementById('modal-'+id).classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.modal-overlay').forEach(m=>{m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow=''}})});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>{m.classList.remove('open');document.body.style.overflow=''})});
 
 // ── SCROLL REVEAL ──
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}});
-},{threshold:0.12});
-document.querySelectorAll('.plan-select-card,.why-card,.city-card').forEach(el=>{
-  el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';
-  observer.observe(el);
-});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:.1});
+document.querySelectorAll('.plan-select-card,.why-card,.city-card,.hotel-card,.review-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(28px)';el.style.transition='opacity .55s ease,transform .55s ease';obs.observe(el)});
 </script>
 </body>
 </html>
